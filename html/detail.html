@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit"> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width"/>
+<title>业务员佣金审核表</title>
+ <link href="../css/bootstrap.min.css" rel="stylesheet"> 
+ 
+ <style>
+   .baseInfo, .detailInfo{
+     font-weight: bold;
+     font-size:16px;
+   }
+   .baseInfo span{
+      padding-right:40px;
+   }
+   .detailInfo{
+    line-height:35px;
+   }
+   .container{
+     min-width:1000px;
+     max-width:80%;
+   }
+   .detailInfo input{
+    border:0;
+    border-bottom: 1px solid #aaa;
+    line-height:25px;
+    width:120px;
+    background-color: #fff;
+    text-align:center;
+   }
+   
+ </style>
+ 
+ 
+ 
+</head>
+
+<body>
+     <div class="container">
+         <center>  <h3 style="font-weight: bold;">xxx项目请佣明细</h3>   </center> 
+        <div class="baseInfo">
+        <span>姓名：xxx</span>
+        <span>手机：159********</span>    
+        <span>证件号：********************************</span>
+        </div>
+        <table class="table table-bordered table-hover">
+             <tr>
+              <th>成交合同号</th>
+              <th>职位</th>
+              <th>等级系数</th>
+              <th>楼号</th>
+              <th>单元号</th>
+              <th>室号</th>
+              <th>...</th>
+              <th>成交日期</th>
+              <th>成交总金额</th>
+              <th>佣金提成</th>
+              <th>经理提成</th>
+              <th>总监提成</th>
+              <th>应发</th>
+              <th>状态</th>
+           </tr>
+             
+             <tbody>
+              <tr>
+              <td>001</td>
+              <td>普通职员</td>
+              <td>0.05600</td>
+              <td>5</td>
+              <td>2</td>
+              <td>1101</td>
+              <td>...</td>
+              <td>2016-12-01</td>
+              <td>200万元</td>
+              <td>3‰</td>
+              <td>20%</td>
+              <td>10%</td>
+              <td>4200元</td>
+              <td><a href="javascript:void(0);" onclick="alert('审核处理流程')" >未审核</a></td>
+             </tr>
+              <tr>
+              <td>002</td>
+              <td>普通职员</td>
+              <td>0.05600</td>
+              <td>5</td>
+              <td>3</td>
+              <td>1101</td>
+              <td>...</td>
+              <td>2016-12-01</td>
+              <td>200万元</td>
+              <td>3‰</td>
+              <td>15%</td>
+              <td>15%</td>
+              <td>4200元</td>
+              <td><a href="javascript:void(0);" onclick="alert('审核处理流程')" >未审核</a></td>
+             </tr>
+
+             </tbody>
+         </table>
+          <div style="text-align:right; color:red;">小计：8400</div>
+          <br/>
+          <div class="detailInfo">
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <input type="text" value="xxxx" disabled="disabled" style="width:300px;"/>项目 
+             <input type="text" value="xxxx" disabled="disabled"/>员工 ，
+                                      在<input type="text" value="xxxx" disabled="disabled"/>批次请佣中，
+                                      经核准本批次共获得业务提成总佣金 <input type="text" value="12000" disabled="disabled"/>元   ，
+                                      扣除项目经理提成<input type="text" value="2100" disabled="disabled"/>元    ，
+                                      扣除项目总监提成<input type="text" value="1500" disabled="disabled"/>元，
+                                      小计个人获得 <input type="text" value="8400" disabled="disabled"/>元。
+                                      扣除项目公共开支 <input type="text" value="2000" disabled="disabled"/>元;
+                                      扣除业务过失处罚金   <input type="text"/>;
+                                      扣除其他费用<input type="text"/>;
+                                      扣除个人所得税  <input type="text"/>。
+                                       应发  <input type="text"/>，
+                                       实际需发<input type="text"/>。
+           <div style="text-align:right; padding-top:100px;">
+              <p>审核人： <input type="text"/> </p>
+              <p>审核时间： <input type="text"/></p>
+              <p>博思堂地产综合服务股份有限公司</p>
+          </div>
+          </div>    
+        
+     </div>
+</body>
+
+<script src="../js/jquery-1.10.1.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+</html>
