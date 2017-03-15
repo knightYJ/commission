@@ -22,15 +22,29 @@
      <br/>
        <div>
            <form action="" method="post">
-            <table style="margin-bottom:20px;width:80%;" >
+            <table style="margin-bottom:20px;width:80%; " >
              <tr>
                   <td>项目名称:</td>
                   <td><input type="text" name="projectName"  value=""/></td>
                   <td>城市:</td>
                   <td><input type="text" name="city"  value=""/></td>
+                  <td>区域:</td>
+                  <td><input type="text" name="area"  value=""/></td>
+             </tr>
+             <tr style="height:40px;">
                   <td>申请日期:</td>
                   <td><input type="text" name="date"  value=""/></td>
-                  <td><input type="submit" value="搜索"> </td>
+                  <td>审核状态:</td>
+                  <td>
+                    <select>
+                         <option>未审核</option>
+                         <option>审核中</option>
+                         <option>审核通过</option>
+                         <option>打回</option>
+                    </select>
+                  </td>
+                  
+                  <td><input type="submit" value="搜索" class="btn btn-primary btn-sm"> </td>
              </tr>
             </table>
            </form> 
@@ -40,71 +54,73 @@
              <tr>
               <th>序号</th>
               <th>项目名称</th>
-              <th>总监</th>
-              <th>项目经理</th>
+              <th>城市</th>
+              <th>区域</th>
               <th>成员数</th>
               <th>总金额</th>
               <th>申请金额</th>
               <th>本次结余</th>
-              <th>城市</th>
               <th>地址</th>
-              <th>联系电话</th>
               <th>申请日期</th>
               <th>状态</th>
-              <th>审核人</th>
               <th>详细</th>
            </tr>
           <tbody>
              <tr>
               <td>1</td>
               <td>A项目</td>
-              <td>王总监</td>
-              <td>李经理</td>
+              <td>苏州</td>
+              <td>高新区</td>
               <td>5人</td>
               <td>50万</td>
               <td>30万</td>
               <td>0</td>
-              <td>苏州</td>
               <td>苏州相城xx街xx路xx号</td>
-              <td>65222125</td>
-              <td>2016-12-01</td>
+              <td>2017-02-01</td>
               <td>未审核</td>
-              <td></td>
-              <td><a href="commission.html">查看</a></td>
+              <td><a href="bill.html">查看</a></td>
              </tr>
              <tr>
               <td>2</td>
+              <td>A项目</td>
+              <td>苏州</td>
+              <td>高新区</td>
+              <td>5人</td>
+              <td>50万</td>
+              <td>20万</td>
+              <td>0</td>
+              <td>苏州相城xx街xx路xx号</td>
+              <td>2017-01-01</td>
+              <td>审核通过</td>
+              <td><a href="bill.html">查看</a></td>
+             </tr>
+             <tr>
+              <td>3</td>
               <td>B项目</td>
-              <td>王总监</td>
-              <td>李经理</td>
+              <td>吴江</td>
+              <td></td>
               <td>6人</td>
               <td>40万</td>
               <td>30万</td>
               <td>0</td>
-              <td>苏州</td>
               <td>苏州相城xx街xx路xx号</td>
-              <td>65223125</td>
               <td>2016-12-01</td>
-              <td>未审核</td>
-              <td></td>
-              <td><a href="commission.html">查看</a></td>
+              <td>审核中</td>
+              <td><a href="bill.html">查看</a></td>
              </tr>
              <tr>
-              <td>3</td>
+              <td>4</td>
               <td>C项目</td>
-              <td>王总监</td>
-              <td>李经理</td>
+              <td>昆山</td>
+              <td></td>
               <td>15人</td>
               <td>50万</td>
               <td>30万</td>
-              <td>1元</td>
-              <td>苏州</td>
+              <td>1000元</td>
               <td>苏州相城xx街xx路xx号</td>
-              <td>62112125</td>
               <td>2016-12-01</td>
-              <td>未审核</td>
-              <td></td>
-              <td><a href="commission.html">查看</a></td>
+              <td>打回</td>
+              <td><a href="bill.html">查看</a></td>
              </tr>
              </tbody>
         </table>

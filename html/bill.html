@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit"> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width"/>
+<title>业务员佣金审核表</title>
+ <link href="../css/bootstrap.min.css" rel="stylesheet"> 
+ 
+ <style>
+   .baseInfo, .detailInfo{
+     font-weight: bold;
+     font-size:16px;
+   }
+   .detailInfo{
+    line-height:35px;
+   }
+   .container{
+     min-width:1500px;
+     max-width:90%;
+   }
+   .table th,td{
+    text-align:center;
+   }
+   .tableRow{
+     max-height:100px;
+     overflow-y: auto;
+   }
+   .tableRow .row:first-child{
+      color:#000;
+      font-weight: bold;
+   }
+   .table thead>tr>th, .table tbody>tr>th, .table tfoot>tr>th, .table thead>tr>td, .table tbody>tr>td, .table tfoot>tr>td {
+    vertical-align: middle;
+   }
+ </style>
+ 
+ 
+ 
+</head>
+
+<body>
+     <div class="container">
+         <center>  <h3 style="font-weight: bold;">A项目请佣明细</h3>   </center> 
+         <br/>
+        <div class="baseInfo">
+        <span>业务员佣金明细表:</span>
+        </div>   
+       <table class="table table-bordered table-hover" id="tableItem">
+            <thead>
+               <tr>
+                 <th rowspan="2">序号</th>
+                 <th rowspan="2">合同号</th>
+                 <th rowspan="2">成交时间</th>
+                 <th colspan="6">成交房产信息</th>
+                 <th colspan="5">业务员信息</th>
+                 <th rowspan="2">其他款项</th>
+                  <th rowspan="2">应发</th>
+                 <th rowspan="2">提佣比</th>
+                 <th rowspan="2">实发</th>
+                 <th rowspan="2">审核</th>
+               </tr>
+				<th>楼栋号</th>
+				<th>室号</th>
+				<th>面积(㎡)</th>
+				<th>总价(万)</th>
+				<th>业主</th>
+				<th>手机</th>
+				<th>业务员</th>
+				<th>手机</th>
+				<th>等级</th>
+				<th>等级系数</th>
+				<th>佣点</th>
+            </thead>
+       
+           <tbody>
+			<tr>
+				<td>1</td>
+				<td>4654zxc</td>
+				<td>2015-01-02</td>
+				<td>1幢</td>
+				<td>9-3001</td>
+				<td>80</td>
+				<td>80</td>
+				<td>张飞</td>
+				<td>18269795195</td>
+				<td>张三</td>
+				<td>18269795185</td>
+				<td>A级</td>
+				<td>0.7</td>
+				<td>0.76</td>
+				<td>
+				 <div class="tableRow">
+				  <div class="row">
+				     <div class="col-xs-10"  >合计</div>
+				     <div class="col-xs-2">-1000</div>
+				  </div>
+				  <div class="row">
+				     <div class="col-xs-10">项目业绩超额超时奖励</div>
+				     <div class="col-xs-2">1000</div>
+				  </div>
+				  <div class="row">
+				     <div class="col-xs-10">项目过失处罚</div>
+				     <div class="col-xs-2">-1000</div>
+				  </div>
+				  <div class="row">
+				     <div class="col-xs-10">项目公共开支</div>
+				     <div class="col-xs-2">-1000</div>
+				  </div>
+				  </div>
+				</td> 
+				<td>5000</td>
+				<td>0.6</td>
+				<td>4000</td> 
+				<td><a href="javaScript:void(0)">审核</a></td>  
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>46534zxc</td>
+				<td>2015-01-02</td>
+				<td>2幢</td>
+				<td>9-3001</td>
+				<td>80</td>
+				<td>80</td>
+				<td>张飞</td>
+				<td>18269795195</td>
+				<td>张三</td>
+				<td>18269795185</td>
+				<td>A级</td>
+				<td>0.7</td>
+				<td>0.76</td>
+				<td>
+				 <div class="tableRow">
+				  <div class="row">
+				     <div class="col-xs-10"  >合计</div>
+				     <div class="col-xs-2">-1000</div>
+				  </div>
+				  <div class="row">
+				     <div class="col-xs-10">项目业绩超额超时奖励</div>
+				     <div class="col-xs-2">1000</div>
+				  </div>
+				  <div class="row">
+				     <div class="col-xs-10">项目过失处罚</div>
+				     <div class="col-xs-2">-1000</div>
+				  </div>
+				  <div class="row">
+				     <div class="col-xs-10">项目公共开支</div>
+				     <div class="col-xs-2">-1000</div>
+				  </div>
+				  </div>
+				</td> 
+				<td>5000</td>
+				<td>0.6</td>
+				<td>4000</td> 
+				<td><a href="javaScript:void(0)">审核</a></td>  
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>4654zxc</td>
+				<td>2015-01-02</td>
+				<td>3幢</td>
+				<td>9-3001</td>
+				<td>80</td>
+				<td>80</td>
+				<td>张飞</td>
+				<td>18269795195</td>
+				<td>张三</td>
+				<td>18269795185</td>
+				<td>A级</td>
+				<td>0.7</td>
+				<td>0.76</td>
+				<td>
+				 <div class="tableRow">
+				  <div class="row">
+				     <div class="col-xs-10">合计</div>
+				     <div class="col-xs-2">-1000</div>
+				  </div>
+				  <div class="row">
+				     <div class="col-xs-10">项目业绩超额超时奖励</div>
+				     <div class="col-xs-2">1000</div>
+				  </div>
+				  <div class="row">
+				     <div class="col-xs-10">项目过失处罚</div>
+				     <div class="col-xs-2">-1000</div>
+				  </div>
+				  <div class="row">
+				     <div class="col-xs-10">项目公共开支</div>
+				     <div class="col-xs-2">-1000</div>
+				  </div>
+				  </div>
+				</td> 
+				<td>5000</td>
+				<td>0.6</td>
+				<td>4000</td> 
+				<td><a href="javaScript:void(0)">审核</a></td>  
+			</tr>
+
+			</tbody>
+
+	</table>
+        <div  style="text-align:right; color:red;">小计：<span class="subSum">134720</span>元</div>
+      
+        <div class="baseInfo">
+        <span>项目经理请佣明细：</span>
+        </div> 
+	 <table class="table table-bordered table-hover">
+			<tr>
+				<th>序号</th>
+				<th>姓名</th>
+				<th>手机</th>
+				<th>佣点</th>
+				<th>系数</th>
+				<th>其他款项</th>
+			    <th>应发</th>
+                <th>提佣比</th>
+                <th>实发</th>
+                <th>审核</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>黄三</td>
+				<td>15345678912</td>
+				<td>1.2</td>
+				<td>0.2</td>
+				<td>
+        		 <div class="tableRow">
+				  <div class="row">
+				     <div class="col-xs-10">合计</div>
+				     <div class="col-xs-2">-1000</div>
+				   </div>
+				   <div class="row">
+				      <div class="col-xs-10">项目业绩超额超时奖励</div>
+				     <div class="col-xs-2">1000</div>
+				   </div>
+				   <div class="row">
+				     <div class="col-xs-10">项目过失处罚</div>
+				     <div class="col-xs-2">-1000</div>
+				   </div>
+				   <div class="row">
+				     <div class="col-xs-10">项目公共开支</div>
+				     <div class="col-xs-2">-1000</div>
+				   </div>
+				  </div>
+				 </td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td><a href="javaScript:void(0)">审核</a></td>
+			</tr>
+	</table>
+          <div  style="text-align:right; color:red;">小计：<span class="subSum">134720</span>元</div>
+      
+        <div class="baseInfo">
+        <span>项目总监请佣明细：</span>
+        </div> 
+        <table class="table table-bordered table-hover">
+   			<tr>
+				<th>序号</th>
+				<th>姓名</th>
+				<th>手机</th>
+				<th>佣点</th>
+				<th>系数</th>
+				<th>其他款项</th>
+                <th>应发</th>
+                <th>提佣比</th>
+				<th>实发</th>
+                <th>审核</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>马三</td>
+				<td>14567894231</td>
+				<td>1.5</td>
+				<td>0.5</td>
+				<td>
+				   <div class="tableRow">
+				  <div class="row">
+				     <div class="col-xs-10">合计</div>
+				     <div class="col-xs-2">-1000</div>
+				   </div>
+				   <div class="row">
+				      <div class="col-xs-10">项目业绩超额超时奖励</div>
+				     <div class="col-xs-2">1000</div>
+				   </div>
+				   <div class="row">
+				     <div class="col-xs-10">项目过失处罚</div>
+				     <div class="col-xs-2">-1000</div>
+				   </div>
+				   <div class="row">
+				     <div class="col-xs-10">项目公共开支</div>
+				     <div class="col-xs-2">-1000</div>
+				   </div>
+				  </div>
+				</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td><a href="javaScript:void(0)">审核</a></td>
+			</tr>
+   
+         </table>
+         <div  style="text-align:right; color:red;">小计：<span class="subSum">134720</span>元</div>
+         <div  style="text-align:right; color:red;">总计：<span class="sum">134720</span>元</div>        
+          <br/>
+        <div style="padding-top:20px; margin-bottom: 100px;">
+          <center>   
+            <button class="btn btn-success" id="passBtn">通过</button>
+            <button class="btn btn-danger"  id="backBtn">打回</button>
+          </center>    
+        </div>
+     
+     </div>
+</body>
+
+<script src="../js/jquery-1.10.1.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+
+<script>
+    $("#passBtn").click(function(){
+    	alert("全部审核通过，则可生成汇总表");
+    	window.location.href="./commission.html";
+    })
+    $("#backBtn").click(function(){
+    	alert("有审核不通过项,将被打回");
+    })
+
+
+</script>
+
+
+
+</html>

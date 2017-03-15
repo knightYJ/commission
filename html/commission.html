@@ -35,7 +35,6 @@
               <th>实发</th>
               <th>请佣比</th>
               <th>状态</th>
-              <th>审核人</th>
               <th>详细</th>
            </tr>
              
@@ -53,9 +52,8 @@
               <td></td>
               <td></td>
               <td>0.6</td>
-              <td>未审核</td>
-              <td></td>
-              <td><a href="detail2.html">查看</a></td>
+              <td>审核通过</td>
+              <td><a href="bill.html">查看</a></td>
              </tr>
               <tr>
               <td>2</td>
@@ -70,9 +68,8 @@
               <td></td>
               <td></td>
               <td>0.6</td>
-              <td>未审核</td>
-              <td></td>
-              <td><a href="detail2.html">查看</a></td>
+              <td>审核通过</td>
+              <td><a href="bill.html">查看</a></td>
              </tr>
               <tr>
               <td>3</td>
@@ -87,9 +84,8 @@
               <td></td>
               <td></td>
               <td>0.6</td>
-              <td>未审核</td>
-              <td></td>
-              <td><a href="detail.html">查看</a></td>
+              <td>审核通过</td>
+              <td><a href="bill.html">查看</a></td>
              </tr>
               <tr>
               <td>4</td>
@@ -104,9 +100,8 @@
               <td></td>
               <td></td>
               <td>0.6</td>            
-              <td>未审核</td>
-              <td></td>
-              <td><a href="detail.html">查看</a></td>
+              <td>审核通过</td>
+              <td><a href="bill.html">查看</a></td>
              </tr>
               <tr>
               <td>5</td>
@@ -121,9 +116,8 @@
               <td>6000</td>
               <td></td>
               <td>0.6</td>              
-              <td>未审核</td>
-              <td></td>
-              <td><a href="detail.html">查看</a></td>
+              <td>审核通过</td>
+              <td><a href="bill.html">查看</a></td>
              </tr>
       
              </tbody>
@@ -141,9 +135,6 @@
               <th>总佣金</th>
               <th>本次总金</th>
               <th>请佣比</th>
-              <th>公共开支</th>
-              <th>项目人数</th>
-              <th>平均扣款</th>   
               <th>本次结余</th>
               <th>状态</th>
            </tr>
@@ -158,9 +149,6 @@
               <td>50万元</td>
               <td>30万元</td>
               <td>0.6</td>
-              <td>10000元</td>
-              <td>5人</td>
-              <td>2000元</td>   
               <td>0</td>
               <td><a href="javascript:void(0);" onclick="alert('审核处理流程')" >未审核</a></td>
             </tr>
@@ -174,32 +162,19 @@
               <td>50万元</td>
               <td>20万元</td>
               <td>0.4</td>
-              <td>10000元</td>
-              <td>5人</td>
-              <td>2000元</td>   
               <td>4元</td>
-              <td>已发放</td>
+              <td>审核通过</td>
             </tr>
         </tbody>   
         </table>
         
         <div style="padding-top:20px;">
-        <center>
-            <button class="btn btn-info">导出</button>
-            <button class="btn btn-success">通过</button>
-            <button class="btn btn-danger">打回</button>
+        <center>   
+            <button id="passBtn" class="btn btn-success">通过</button>
+            <button id="backBtn" class="btn btn-danger">打回</button>
         </center>    
         </div>
         
-<!--          <div style="color:red">
-        <p>ps:</p>
-         <p>1.总佣金=申请佣金-处罚金总额</p>
-         <p>2.应发总金额必须等于总佣金</p>
-         <p>3.应发请佣总分总金额应该等于开发商申请总额，请佣总金额应不超过 （开发商本次实际打款金额+上次结余）</p>
-         <p>4.上次结余可正可负（当公司有垫付时，可能为负数）</p>
-         <p>5.扣款是明细中的所有扣除款项之和</p>
-         <p>6.审核分为个人账目审核和总账目审核，必须都通过，才能进入下一流程，否则只能打回</p>
-        </div> -->
            
      </div>
      
@@ -209,4 +184,18 @@
 
 <script src="../js/jquery-1.10.1.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
+
+ <script>
+    $("#passBtn").click(function(){
+    	 alert("再次审核总账单且明细账单全部通过则可发放佣金")
+     })
+    $("#backBtn").click(function(){
+    	 alert("有未通过的账单项目才能打回")
+     })
+ 
+ </script>
+
+
+
+
 </html>
