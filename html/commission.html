@@ -18,21 +18,22 @@
 <body>
      <div class="container">
      
-        <center>  <h3 style="font-weight: bold;">xxx项目请佣结算表</h3>   </center> 
-        <h4>请佣明细表：</h4>
+        <center>  <h3 style="font-weight: bold;">A项目请佣结算表</h3>   </center> 
+        <h4>请佣明细表(编号:002)：</h4>
         <table class="table table-bordered table-hover">
              <tr>
               <th>序号</th>
               <th>姓名</th>
               <th>项目</th>
               <th>职位</th>
-              <th>等级系数</th>
-              <th>签约总额</th>
+              <th>成交总额</th>
+              <th>成交套数</th>
               <th>佣金提成</th>
+              <th>等级系数</th>
               <th>应发</th>
-              <th>扣款</th>
+              <th>其他款项</th>
               <th>实发</th>
-              <th>请佣</th>
+              <th>请佣比</th>
               <th>状态</th>
               <th>审核人</th>
               <th>详细</th>
@@ -44,13 +45,14 @@
               <td>赵大</td>
               <td>A项目</td>
               <td>总监</td>
+              <td></td>
+              <td></td>
+              <td>3‰</td>
               <td>1</td>
-              <td>200百万</td>
               <td></td>
               <td></td>
               <td></td>
-              <td></td>
-              <td>是</td>
+              <td>0.6</td>
               <td>未审核</td>
               <td></td>
               <td><a href="detail2.html">查看</a></td>
@@ -60,13 +62,14 @@
               <td>钱二</td>
               <td>A项目</td>
               <td>项目经理</td>
-              <td>1</td>              
               <td>200百万</td>
+              <td>2</td>
+              <td>3‰</td>
+              <td>1</td>              
               <td></td>
               <td></td>
               <td></td>
-              <td></td>
-              <td>是</td>
+              <td>0.6</td>
               <td>未审核</td>
               <td></td>
               <td><a href="detail2.html">查看</a></td>
@@ -76,13 +79,14 @@
               <td>张三</td>
               <td>A项目</td>
               <td>普通职员</td>
-               <td>0.056</td>             
               <td>200百万</td>
+              <td>2</td>
               <td>3‰</td>
+               <td>0.056</td>             
               <td>6000</td>
               <td></td>
               <td></td>
-              <td>是</td>
+              <td>0.6</td>
               <td>未审核</td>
               <td></td>
               <td><a href="detail.html">查看</a></td>
@@ -92,13 +96,14 @@
               <td>李四</td>
               <td>A项目</td>
               <td>普通职员</td>
-              <td>0.056</td>                       
               <td>200百万</td>
+              <td>2</td>
               <td>3‰</td>
+              <td>0.056</td>                       
               <td>6000</td>
               <td></td>
               <td></td>
-              <td>是</td>            
+              <td>0.6</td>            
               <td>未审核</td>
               <td></td>
               <td><a href="detail.html">查看</a></td>
@@ -108,13 +113,14 @@
               <td>王五</td>
               <td>A项目</td>
               <td>普通职员</td>
-              <td>0.056</td>                       
               <td>200百万</td>
+              <td>2</td>
               <td>3‰</td>
+              <td>0.056</td>                       
               <td></td>
               <td>6000</td>
               <td></td>
-              <td>否</td>              
+              <td>0.6</td>              
               <td>未审核</td>
               <td></td>
               <td><a href="detail.html">查看</a></td>
@@ -123,57 +129,77 @@
              </tbody>
         </table>
         
-        <h4>请佣汇总表：</h4>
+        <h4>历次请佣汇总表：</h4>
         <table class="table table-bordered table-hover">
              <tr>
-              <th>序号</th>
+              <th>编号</th>
               <th>请佣日期</th>
               <th>项目</th>
+              <th>城市</th>
+              <th>联系电话</th>
+              <th>项目签约总额</th>
               <th>总佣金</th>
               <th>本次总金</th>
-              <th>上次结余</th>
-              <th>本次请佣</th>
+              <th>请佣比</th>
               <th>公共开支</th>
-              <th>项目总人数</th>
+              <th>项目人数</th>
               <th>平均扣款</th>   
               <th>本次结余</th>
               <th>状态</th>
            </tr>
         <tbody>
             <tr>
-              <td>001</td>
-              <td>2017-01-01</td>
+              <td>002</td>
+              <td>2017-02-01</td>
               <td>A项目</td>
+              <td>苏州</td>
+              <td>62156215</td>
+              <td>800万</td>
+              <td>50万元</td>
               <td>30万元</td>
-              <td>20万元</td>
-              <td>0</td>
-              <td>18.5万元</td>
+              <td>0.6</td>
               <td>10000元</td>
               <td>5人</td>
               <td>2000元</td>   
-              <td>5000元</td>
+              <td>0</td>
               <td><a href="javascript:void(0);" onclick="alert('审核处理流程')" >未审核</a></td>
+            </tr>
+            <tr>
+              <td>001</td>
+              <td>2017-01-01</td>
+              <td>A项目</td>
+              <td>苏州</td>
+              <td>62156215</td>
+              <td>800万</td>
+              <td>50万元</td>
+              <td>20万元</td>
+              <td>0.4</td>
+              <td>10000元</td>
+              <td>5人</td>
+              <td>2000元</td>   
+              <td>4元</td>
+              <td>已发放</td>
             </tr>
         </tbody>   
         </table>
         
         <div style="padding-top:20px;">
         <center>
+            <button class="btn btn-info">导出</button>
             <button class="btn btn-success">通过</button>
             <button class="btn btn-danger">打回</button>
         </center>    
         </div>
         
-         <div style="color:red">
+<!--          <div style="color:red">
         <p>ps:</p>
          <p>1.总佣金=申请佣金-处罚金总额</p>
          <p>2.应发总金额必须等于总佣金</p>
          <p>3.应发请佣总分总金额应该等于开发商申请总额，请佣总金额应不超过 （开发商本次实际打款金额+上次结余）</p>
          <p>4.上次结余可正可负（当公司有垫付时，可能为负数）</p>
-         <p>4.扣款是明细中的所有扣除款项之和</p>
-         <p>5.对于本次不请佣的账目也必须审核，以确保账目总数相等。不请佣部分下次直接结算，不得修改！</p>
+         <p>5.扣款是明细中的所有扣除款项之和</p>
          <p>6.审核分为个人账目审核和总账目审核，必须都通过，才能进入下一流程，否则只能打回</p>
-        </div>
+        </div> -->
            
      </div>
      
