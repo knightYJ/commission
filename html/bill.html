@@ -17,13 +17,14 @@
     line-height:35px;
    }
    .container{
-     min-width:1500px;
      max-width:90%;
+     text-align: center;
    }
    .table th,td{
     text-align:center;
    }
    .tableRow{
+     min-width:300px;
      max-height:100px;
      overflow-y: auto;
    }
@@ -34,6 +35,16 @@
    .table thead>tr>th, .table tbody>tr>th, .table tfoot>tr>th, .table thead>tr>td, .table tbody>tr>td, .table tfoot>tr>td {
     vertical-align: middle;
    }
+   .form-horizontal .control-label{
+     padding-top:0;
+   }
+   .remark{
+     word-wrap:break-word;
+     max-width: 100px;
+     max-height:80px;
+     overflow-y: auto;
+   }
+   
  </style>
  
  
@@ -47,18 +58,20 @@
         <div class="baseInfo">
         <span>业务员佣金明细表:</span>
         </div>   
-       <table class="table table-bordered table-hover" id="tableItem">
+        <div style="overflow-x:auto;min-width:1000px;">
+       <table class="table table-bordered table-hover" id="tableItem"  style="width:2000px;">
             <thead>
                <tr>
                  <th rowspan="2">序号</th>
                  <th rowspan="2">合同号</th>
                  <th rowspan="2">成交时间</th>
                  <th colspan="6">成交房产信息</th>
-                 <th colspan="5">业务员信息</th>
-                 <th rowspan="2">其他款项</th>
-                  <th rowspan="2">应发</th>
+                 <th colspan="4">项目经理</th>
+                 <th colspan="4">项目总监</th>
+                 <th colspan="6">业务员信息</th>
+                 <th rowspan="2">应发(元)</th>
                  <th rowspan="2">提佣比</th>
-                 <th rowspan="2">实发</th>
+                 <th rowspan="2">实发(元)</th>
                  <th rowspan="2">审核</th>
                </tr>
 				<th>楼栋号</th>
@@ -67,17 +80,26 @@
 				<th>总价(万)</th>
 				<th>业主</th>
 				<th>手机</th>
+				<th>姓名</th>
+				<th>佣点</th>
+				<th>系数</th>
+				<th>提佣</th>
+				<th>姓名</th>
+				<th>佣点</th>
+				<th>系数</th>
+				<th>提佣</th>
 				<th>业务员</th>
 				<th>手机</th>
 				<th>等级</th>
-				<th>等级系数</th>
+				<th>系数</th>
 				<th>佣点</th>
+				<th>其他款项</th>
             </thead>
        
            <tbody>
 			<tr>
 				<td>1</td>
-				<td>4654zxc</td>
+				<td>201606150149</td>
 				<td>2015-01-02</td>
 				<td>1幢</td>
 				<td>9-3001</td>
@@ -85,6 +107,17 @@
 				<td>80</td>
 				<td>张飞</td>
 				<td>18269795195</td>
+				
+				<td>黄三</td>
+				<td>0.7</td>
+				<td>0.76</td>
+				<td>3000</td>
+				
+				<td>马三</td>
+				<td>0.7</td>
+				<td>0.76</td>
+				<td>2000</td>
+				
 				<td>张三</td>
 				<td>18269795185</td>
 				<td>A级</td>
@@ -113,116 +146,42 @@
 				<td>5000</td>
 				<td>0.6</td>
 				<td>4000</td> 
-				<td><a href="javaScript:void(0)">审核</a></td>  
-			</tr>
-			<tr>
-				<td>2</td>
-				<td>46534zxc</td>
-				<td>2015-01-02</td>
-				<td>2幢</td>
-				<td>9-3001</td>
-				<td>80</td>
-				<td>80</td>
-				<td>张飞</td>
-				<td>18269795195</td>
-				<td>张三</td>
-				<td>18269795185</td>
-				<td>A级</td>
-				<td>0.7</td>
-				<td>0.76</td>
 				<td>
-				 <div class="tableRow">
-				  <div class="row">
-				     <div class="col-xs-10"  >合计</div>
-				     <div class="col-xs-2">-1000</div>
-				  </div>
-				  <div class="row">
-				     <div class="col-xs-10">项目业绩超额超时奖励</div>
-				     <div class="col-xs-2">1000</div>
-				  </div>
-				  <div class="row">
-				     <div class="col-xs-10">项目过失处罚</div>
-				     <div class="col-xs-2">-1000</div>
-				  </div>
-				  <div class="row">
-				     <div class="col-xs-10">项目公共开支</div>
-				     <div class="col-xs-2">-1000</div>
-				  </div>
-				  </div>
-				</td> 
-				<td>5000</td>
-				<td>0.6</td>
-				<td>4000</td> 
-				<td><a href="javaScript:void(0)">审核</a></td>  
+				 <a data-toggle="modal" href="#myModal" >审核</a>
+				 <div class="remark">
+				</div>
+				</td>
 			</tr>
-			<tr>
-				<td>3</td>
-				<td>4654zxc</td>
-				<td>2015-01-02</td>
-				<td>3幢</td>
-				<td>9-3001</td>
-				<td>80</td>
-				<td>80</td>
-				<td>张飞</td>
-				<td>18269795195</td>
-				<td>张三</td>
-				<td>18269795185</td>
-				<td>A级</td>
-				<td>0.7</td>
-				<td>0.76</td>
-				<td>
-				 <div class="tableRow">
-				  <div class="row">
-				     <div class="col-xs-10">合计</div>
-				     <div class="col-xs-2">-1000</div>
-				  </div>
-				  <div class="row">
-				     <div class="col-xs-10">项目业绩超额超时奖励</div>
-				     <div class="col-xs-2">1000</div>
-				  </div>
-				  <div class="row">
-				     <div class="col-xs-10">项目过失处罚</div>
-				     <div class="col-xs-2">-1000</div>
-				  </div>
-				  <div class="row">
-				     <div class="col-xs-10">项目公共开支</div>
-				     <div class="col-xs-2">-1000</div>
-				  </div>
-				  </div>
-				</td> 
-				<td>5000</td>
-				<td>0.6</td>
-				<td>4000</td> 
-				<td><a href="javaScript:void(0)">审核</a></td>  
-			</tr>
+			
 
 			</tbody>
 
 	</table>
-        <div  style="text-align:right; color:red;">小计：<span class="subSum">134720</span>元</div>
-      
+       </div>
+        <div  style="text-align:left; color:red;">小计：<span class="subSum">134720</span>元</div>
+        <br/>
         <div class="baseInfo">
         <span>项目经理请佣明细：</span>
         </div> 
-	 <table class="table table-bordered table-hover">
+	 <table class="table table-bordered table-hover" style="min-width:1000px;">
 			<tr>
 				<th>序号</th>
 				<th>姓名</th>
 				<th>手机</th>
-				<th>佣点</th>
-				<th>系数</th>
+				<th>签约总额</th>
+				<th>总提佣</th>
 				<th>其他款项</th>
 			    <th>应发</th>
                 <th>提佣比</th>
                 <th>实发</th>
-                <th>审核</th>
+                <th style="width:100px;">审核</th>
 			</tr>
 			<tr>
 				<td>1</td>
 				<td>黄三</td>
 				<td>15345678912</td>
-				<td>1.2</td>
-				<td>0.2</td>
+				<td>800万元</td>
+				<td>15000</td>
 				<td>
         		 <div class="tableRow">
 				  <div class="row">
@@ -246,33 +205,37 @@
 				<td></td>
 				<td></td>
 				<td></td>
-				<td><a href="javaScript:void(0)">审核</a></td>
+				<td>
+				 <a data-toggle="modal" href="#myModal" >审核</a>
+				 <div class="remark">
+				</div>
+				</td>
 			</tr>
 	</table>
-          <div  style="text-align:right; color:red;">小计：<span class="subSum">134720</span>元</div>
-      
+          <div  style="text-align:left; color:red;">小计：<span class="subSum">134720</span>元</div>
+        <br/>
         <div class="baseInfo">
         <span>项目总监请佣明细：</span>
         </div> 
-        <table class="table table-bordered table-hover">
+        <table class="table table-bordered table-hover"  style="min-width:1000px;">
    			<tr>
 				<th>序号</th>
 				<th>姓名</th>
 				<th>手机</th>
-				<th>佣点</th>
-				<th>系数</th>
+				<th>签约总额</th>
+				<th>总提佣</th>
 				<th>其他款项</th>
                 <th>应发</th>
                 <th>提佣比</th>
 				<th>实发</th>
-                <th>审核</th>
+                <th style="width:100px;">审核</th>
 			</tr>
 			<tr>
 				<td>1</td>
 				<td>马三</td>
 				<td>14567894231</td>
-				<td>1.5</td>
-				<td>0.5</td>
+				<td>800万元</td>
+				<td>15000</td>
 				<td>
 				   <div class="tableRow">
 				  <div class="row">
@@ -296,12 +259,17 @@
 				<td></td>
 				<td></td>
 				<td></td>
-				<td><a href="javaScript:void(0)">审核</a></td>
+				<td>
+				 <a data-toggle="modal" href="#myModal" >审核</a>
+				 <div class="remark">
+				</div>
+				</td>
 			</tr>
+
    
          </table>
-         <div  style="text-align:right; color:red;">小计：<span class="subSum">134720</span>元</div>
-         <div  style="text-align:right; color:red;">总计：<span class="sum">134720</span>元</div>        
+         <div  style="text-align:left; color:red;">小计：<span class="subSum">134720</span>元</div>
+         <div  style="text-align:left; color:red;">总计：<span class="sum">134720</span>元</div>        
           <br/>
         <div style="padding-top:20px; margin-bottom: 100px;">
           <center>   
@@ -311,20 +279,135 @@
         </div>
      
      </div>
+     
+  <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">审核</h4>
+      </div>
+      <div class="modal-body">
+      <form class="form-horizontal">
+        <div class="form-group">
+          <label class="col-sm-2 control-label">姓名</label>
+          <div class="col-sm-10" id="name"></div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">审核</label>
+          <div class="col-sm-10">
+                  <select name="status" id="status">
+                    <option value="">请选择</option>
+                    <option value="通过">审核通过</option>
+                    <option value="打回">打回</option>
+                  </select>   
+          </div>
+        </div>
+          <div class="form-group remarkDiv" style="display:none;">
+             <label class="col-sm-2 control-label">备注</label>
+             <div class="col-sm-10">
+            <textarea class="form-control"  style="width:90%;" id="remark"></textarea>
+            </div>
+          </div>
+
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary btn-ok">确认</button>
+      </div>
+    </div>
+  </div>
+</div>
+     
+     
+     
 </body>
 
 <script src="../js/jquery-1.10.1.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 
 <script>
+
     $("#passBtn").click(function(){
     	alert("全部审核通过，则可生成汇总表");
     	window.location.href="./commission.html";
-    })
+    });
+    
     $("#backBtn").click(function(){
     	alert("有审核不通过项,将被打回");
-    })
+    	window.location.href="./projectList.html";
+    });
+    
+    $("#status").change(function(){
+    	var v=$(this).val();
+    	if(v=="打回"){
+    		$(".remarkDiv").show();
+    	}else{
+    		$(".remarkDiv").hide();
+    	}
+    });
+    
+    
+    $('#myModal').on('show.bs.modal', function (event) {
+     var button = $(event.relatedTarget);
+     button.addClass("activeCheck");
+     var trObj=button.closest("tr");
+     var modal = $(this);
+     var status=$.trim(button.text());
+     if(status!="审核"){
+       modal.find("#status").val(status);
+       if(status=="打回"){
+      	 modal.find(".remarkDiv").show(); 
+      	 var txt=trObj.find(".remark").text();
+    	 modal.find("#remark").text(txt);
+       }
+     }
+     
+    });
+    $('#myModal').on('hide.bs.modal', function (event) {
+    	 $("a").removeClass("activeCheck");
+    	 var modal = $(this);
+    	 modal.find("#name").text("");
+    	 modal.find("#status").val("");
+    	 modal.find("#remark").text("");
+    	 modal.find(".remarkDiv").hide();
+    });
+    
+    
+    //提交内容将会同步存到数据库中
+    $(".btn-ok").click(function(){
+    	var status=$("#status").val();
+    	var remark=$.trim($("#remark").val());
+    	if(status==""){
+    		alert("请选择审核状态");
+    		$("#status").focus();
+    		return;
+    	}
+    	
+    	if(status=="打回"){
+    		if(remark.length==0){
+    			alert("必须填写打回原因!");
+    			$("#remark").focus();
+    			return;
+    		}else{
+    			var cont=$(".activeCheck").closest("td").find(".remark");
+    			cont.text(remark);
+    			$(".activeCheck").css("color","red");
+    		}
+    	}else{
+    	   $(".activeCheck").css("color","green");
+    	}
+    	 $(".activeCheck").text(status);
+    	 $('#myModal').modal('hide');	
+    	
+    });
+    
 
+   
+   
+   
 
 </script>
 
