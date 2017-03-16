@@ -53,6 +53,7 @@
 </head>
 
 <body>
+<p style="color:red;">人事审核详细页面</p>
      <div class="container">
          <center>  <h3 style="font-weight: bold;">A项目请佣明细</h3>   </center> 
          <br/>
@@ -60,18 +61,15 @@
         <span>业务员佣金明细表:</span>
         </div>   
         <div style="overflow-x:auto;min-width:1000px;">
-       <table class="table table-bordered table-hover" id="tableItem"  style="width:2000px;">
+       <table class="table table-bordered table-hover" id="tableItem"  style="width:1500px;">
             <thead>
                <tr>
                  <th rowspan="2">序号</th>
                  <th rowspan="2">合同号</th>
                  <th rowspan="2">成交时间</th>
                  <th colspan="6">成交房产信息</th>
-                 <th colspan="4">项目经理</th>
-                 <th colspan="4">项目总监</th>
                  <th colspan="6">业务员信息</th>
                  <th rowspan="2">应发(元)</th>
-                 <th rowspan="2">提佣比</th>
                  <th rowspan="2">实发(元)</th>
                  <th rowspan="2">审核</th>
                </tr>
@@ -81,14 +79,7 @@
 				<th>总价(万)</th>
 				<th>业主</th>
 				<th>手机</th>
-				<th>姓名</th>
-				<th>系数</th>
-				<th>佣点</th>
-				<th>提佣(元)</th>
-				<th>姓名</th>
-				<th>系数</th>
-				<th>佣点</th>
-				<th>提佣(元)</th>
+	
 				<th>业务员</th>
 				<th>手机</th>
 				<th>等级</th>
@@ -108,16 +99,6 @@
 				<td class="houseAmount">80</td>
 				<td>张飞</td>
 				<td>18269795195</td>
-				
-				<td class="managerName">黄三</td>
-				<td class="managerGrade">0.7</td>
-				<td class="managerNum">0.76</td>
-				<td class="managerCommission">3000</td>
-				
-				<td class="chiefName">马三</td>
-				<td class="chiefGrade">0.7</td>
-				<td class="chiefNum">0.76</td>
-				<td class="chiefCommission">2000</td>
 				
 				<td class="targetName">张三</td>
 				<td class="targetPhone">18269795185</td>
@@ -145,7 +126,6 @@
 				  </div>
 				</td> 
 				<td class="shouldAmount">5000</td>
-				<td class="rate">0.6</td>
 				<td class="realAmount">4000</td> 
 				<td>
 				 <a data-toggle="modal" href="#myModal" >审核</a>
@@ -164,17 +144,7 @@
 				<td>张飞</td>
 				<td>18269795195</td>
 				
-				<td class="managerName">黄三</td>
-				<td class="managerGrade">0.7</td>
-				<td class="managerNum">0.76</td>
-				<td class="managerCommission">3000</td>
-				
-				<td class="chiefName">马三</td>
-				<td class="chiefGrade">0.7</td>
-				<td class="chiefNum">0.76</td>
-				<td class="chiefCommission">2000</td>
-				
-				<td class="targetName">李四</td>
+				<td class="targetName">张三</td>
 				<td class="targetPhone">18269795185</td>
 				<td class="salerGradeCode">A级</td>
 				<td class="salerGrade">0.7</td>
@@ -200,7 +170,6 @@
 				  </div>
 				</td> 
 				<td class="shouldAmount">5000</td>
-				<td class="rate">0.6</td>
 				<td class="realAmount">4000</td> 
 				<td>
 				 <a data-toggle="modal" href="#myModal" >审核</a>
@@ -208,6 +177,7 @@
 				</div>
 				</td>
 			</tr>
+
 			
 
 			</tbody>
@@ -225,10 +195,10 @@
 				<th>姓名</th>
 				<th>手机</th>
 				<th>签约总额</th>
-				<th>总提佣</th>
+				<th>佣点</th>
+				<th>系数</th>
 				<th>其他款项</th>
 			    <th>应发</th>
-                <th>提佣比</th>
                 <th>实发</th>
                 <th style="width:100px;">审核</th>
 			</tr>
@@ -237,7 +207,8 @@
 				<td class="targetName">黄三</td>
 				<td class="targetPhone">15345678912</td>
 				<td>800万元</td>
-				<td class="shouldAmount">15000</td>
+				<td>0.03</td>
+				<td>1.00</td>
 				<td>
         		 <div class="tableRow">
 				  <div class="row">
@@ -260,7 +231,6 @@
 				 </td>
 				<td></td>
 				<td></td>
-				<td></td>
 				<td>
 				 <a data-toggle="modal" href="#myModal" >审核</a>
 				 <div class="remark">
@@ -279,10 +249,10 @@
 				<th>姓名</th>
 				<th>手机</th>
 				<th>签约总额</th>
-				<th>总提佣</th>
+				<th>佣点</th>
+				<th>系数</th>
 				<th>其他款项</th>
                 <th>应发</th>
-                <th>提佣比</th>
 				<th>实发</th>
                 <th style="width:100px;">审核</th>
 			</tr>
@@ -291,7 +261,8 @@
 				<td class="targetName">马三</td>
 				<td class="targetPhone">14567894231</td>
 				<td>800万元</td>
-				<td class="shouldAmount">15000</td>
+				<td>0.03</td>
+				<td>1.00</td>
 				<td>
 				   <div class="tableRow">
 				  <div class="row">
@@ -314,7 +285,6 @@
 				</td>
 				<td></td>
 				<td></td>
-				<td></td>
 				<td>
 				 <a data-toggle="modal" href="#myModal" >审核</a>
 				 <div class="remark">
@@ -329,6 +299,7 @@
           <br/>
         <div style="padding-top:20px; margin-bottom: 100px;">
           <center>   
+            <button class="btn btn-info" id="passAllBtn">一键审核</button>
             <button class="btn btn-success" id="passBtn">通过</button>
             <button class="btn btn-danger"  id="backBtn">打回</button>
           </center>    
@@ -346,15 +317,14 @@
       </div>
       <div class="modal-body">
       <form class="form-horizontal">
-        <div class="form-group">
+<!--         <div class="form-group">
           <label class="col-sm-2 control-label">姓名</label>
           <div class="col-sm-10" id="name"></div>
-        </div>
+        </div> -->
         <div class="form-group">
           <label class="col-sm-2 control-label">审核</label>
           <div class="col-sm-10">
                   <select name="status" id="status">
-                    <option value="">请选择</option>
                     <option value="通过">审核通过</option>
                     <option value="打回">打回</option>
                   </select>   
@@ -386,6 +356,10 @@
 
 <script>
 
+    $("#passAllBtn").click(function(){
+    	alert("将直接通过所有账单，生成总账单");
+    	window.location.href="./commission.html";
+    });
     $("#passBtn").click(function(){
     	alert("全部审核通过，则可生成汇总表");
     	window.location.href="./commission.html";
@@ -431,7 +405,7 @@
     	 $("a").removeClass("activeCheck");
     	 var modal = $(this);
     	 modal.find("#name").text("");
-    	 modal.find("#status").val("");
+    	 modal.find("#status").val("通过");
     	 modal.find("#remark").text("");
     	 modal.find(".remarkDiv").hide();
     });
@@ -447,18 +421,19 @@
     		return;
     	}
     	
+    		var cont=$(".activeCheck").closest("td").find(".remark");
     	if(status=="打回"){
     		if(remark.length==0){
     			alert("必须填写打回原因!");
     			$("#remark").focus();
     			return;
     		}else{
-    			var cont=$(".activeCheck").closest("td").find(".remark");
     			cont.text(remark);
     			$(".activeCheck").css("color","red");
     		}
     	}else{
     	   $(".activeCheck").css("color","green");
+    	   cont.text("");
     	}
     	 $(".activeCheck").text(status);
     	 $('#myModal').modal('hide');	

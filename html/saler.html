@@ -79,7 +79,7 @@ table{
 	
 	<table id="salerTable">
 			<tr>
-				<td colspan="17">业务员佣金明细表</td>
+				<td colspan="17" style="font-weight:bold">业务员佣金明细表</td>
 			</tr>
 			<tr>
 				<td style="width:40px;">序号</td>
@@ -200,7 +200,7 @@ table{
 	
 	<table style="margin-top:30px" id="manaTable">
 			<tr>
-				<td colspan="7">项目经理佣金明细表</td>
+				<td colspan="7" style="font-weight:bold">项目经理佣金明细表</td>
 			</tr>
 			<tr>
 				<td style="width:40px;">序号</td>
@@ -232,7 +232,7 @@ table{
 	
 	<table style="margin-top:30px" id="direTable">
 			<tr>
-				<td colspan="7">总监佣金明细表</td>
+				<td colspan="7" style="font-weight:bold">总监佣金明细表</td>
 			</tr>
 			<tr>
 				<td style="width:40px;">序号</td>
@@ -276,7 +276,7 @@ table{
 	  </div>	
 		<table id="otherTable" style="width:96% ! important;margin-left:30px">
 			<tr>
-			<td colspan="3">奖励和扣款信息</td>
+			<td colspan="3" style="font-weight:bold">奖励和扣款信息</td>
 			</tr>
 			<tr>
 				<td>序号</td>
@@ -295,14 +295,15 @@ table{
 				<td>
 				<input type="text" style="width:100px"/>
 				</td>
-			</tr>
+			</tr>  
 		</table>
 		
 		<div style="margin-top:10px;float:left;margin-left:30px">
 		<input type="button" value="新增" onclick="addOtherTa()"/>
 		<input type="button" value="确定" onclick="addOtherFin()"/>
 		</div>
-	</div>	 
+	</div>
+		 
 		
 </body>
 
@@ -413,6 +414,8 @@ table{
 	    bgdiv.style.width = document.body.scrollWidth;
 	    $("#fade").height($(document).height());
 	    
+	    
+	    
 		otherFinNum=num1;
 		otherFinNum2=num2;
 	}
@@ -430,6 +433,10 @@ table{
 			var kFinance=$(".otherTr"+i).find("td:eq(1)").find("input:text").val();	//填写的金额
 			var fuhao=$(".otherTr"+i).find("td:eq(1)").find("select").val();	//选中的符号
 			var beizhu=$.trim($(".otherTr"+i).find("td:eq(2)").find("input:text").val());	//备注  
+			
+			if(isNaN(kFinance) || !isFinite(kFinance)){
+				kFinance=0;
+			}
 			
 			if(fuhao =="+"){
 				count=Number(count) + Number(kFinance);

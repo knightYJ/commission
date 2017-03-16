@@ -24,24 +24,23 @@ table{
 	text-align:center;
 	border-collapse:collapse; 
 }
-
+  
 #beizhu{
-	margin-top:20px;
 	font-size:17px;
 	color:#F51818;
-	margin-bottom:10px;
 } 
-
+  
 </style>
 
 <body>
 	<div>
 	<h3 style="text-align:center;">配置佣金点数和业务员等级</h3>
 	</div>
+	 <div id="beizhu">备注:该页面为公共页面</div>
 	
-	<table id="commTable">
+	<table id="commTable" style="margin-top:40px">
 			<tr>
-				<td colspan="5">业务员等级对应的系数表</td>
+				<td colspan="5" style="font-weight:bold">业务员等级对应的系数表</td>
 			</tr>
 			<tr>
 				<td style="width:40px;">序号</td>
@@ -118,7 +117,7 @@ table{
 	
 	<table style="margin-top:30px" id="itemComm">
 			<tr>
-				<td colspan="4">项目结佣点数表</td>
+				<td colspan="4" style="font-weight:bold">项目结佣点数表</td>
 			</tr>
 			<tr>
 				<td style="width:40px;">序号</td>
@@ -144,14 +143,12 @@ table{
 	
 	<table style="margin-top:30px" id="managerComm">
 			<tr>
-				<td colspan="5">项目经理佣金点数表</td>
+				<td colspan="5" style="font-weight:bold">项目经理佣金点数表</td>
 			</tr>
 			<tr>
 				<td style="width:40px;">序号</td>
 				<td style="width:70px;">项目名称</td>
 				<td style="width:70px;">项目经理佣金点数</td>
-				<td style="width:70px;">生效时间</td>
-				<td style="width:70px;">失效时间</td>
 			</tr>
 			<tr class="manager1">
 				<td style="width:40px;">1</td>
@@ -159,12 +156,6 @@ table{
 				<td style="width:70px;">
 				<input type="text" value="1.2" style="width:70px;"/>
 				</td>
-				<td style="width:70px;">
-				<input type="text" value="2015-01-01" style="width:70px;"/>
-				</td>
-				<td style="width:70px;">
-				<input type="text" value="2015-03-01" style="width:70px;"/>
-				</td>   
 			</tr>
 	</table>
 	
@@ -174,7 +165,7 @@ table{
 	
 		<table style="margin-top:30px" id="direComm">
 			<tr>
-				<td colspan="7">总监佣金点数表</td>
+				<td colspan="7" style="font-weight:bold">总监佣金点数表</td>
 			</tr>
 			<tr>
 				<td style="width:40px;">序号</td>
@@ -182,8 +173,6 @@ table{
 				<td style="width:70px;">总监姓名</td>
 				<td style="width:70px;">总监手机号</td>
 				<td style="width:70px;">总监佣金点数</td>
-				<td style="width:70px;">生效时间</td>
-				<td style="width:70px;">失效时间</td>
 			</tr>
 			<tr class="dire1">
 				<td style="width:40px;">1</td>
@@ -197,12 +186,6 @@ table{
 				<td style="width:70px;">
 				<input type="text" value="1.5" style="width:70px;"/>
 				</td>
-				<td style="width:70px;">
-				<input type="text" value="2015-01-01" style="width:70px;"/>
-				</td>
-				<td style="width:70px;">
-				<input type="text" value="2015-03-01" style="width:70px;"/>
-				</td>   
 			</tr>
 	</table>
 	
@@ -258,8 +241,6 @@ function addManager(){
   		 +"<td style='width:40px;text-align:center;'>"+rows+"</td>"//
   		 +"<td style='width:120px;text-align:center;'><input type='text' style='width:50px'/></td>"//
   	     +"<td style='width:70px;text-align:center;'><input type='text' style='width:50px'/></td>"//
-  	   	 +"<td style='width:70px;text-align:center;'><input type='text' style='width:50px'/></td>"//
-  	 	 +"<td style='width:70px;text-align:center;'><input type='text' style='width:50px'/></td>"//
   		 +"</tr>"  
   		 
   $("#managerComm").append(ManaHtml);	//添加表单 	 
@@ -277,8 +258,6 @@ function addDire(){
 		 	+"<td style='width:120px;text-align:center;'><input type='text' style='width:50px'/></td>"//
 	     	+"<td style='width:70px;text-align:center;'><input type='text' style='width:50px'/></td>"//
 	     	+"<td style='width:70px;text-align:center;'><input type='text' style='width:50px'/></td>"//
-	   	 	+"<td style='width:70px;text-align:center;'><input type='text' style='width:50px'/></td>"//
-	 		+"<td style='width:70px;text-align:center;'><input type='text' style='width:50px'/></td>"//
 			+"</tr>"  
 		 
 	$("#direComm").append(direHtml);	//添加表单 	 
