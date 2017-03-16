@@ -32,7 +32,8 @@
       color:#000;
       font-weight: bold;
    }
-   .table thead>tr>th, .table tbody>tr>th, .table tfoot>tr>th, .table thead>tr>td, .table tbody>tr>td, .table tfoot>tr>td {
+   .table thead>tr>th, .table tbody>tr>th, .table tfoot>tr>th,
+    .table thead>tr>td, .table tbody>tr>td, .table tfoot>tr>td {
     vertical-align: middle;
    }
    .form-horizontal .control-label{
@@ -81,13 +82,13 @@
 				<th>业主</th>
 				<th>手机</th>
 				<th>姓名</th>
-				<th>佣点</th>
 				<th>系数</th>
-				<th>提佣</th>
+				<th>佣点</th>
+				<th>提佣(元)</th>
 				<th>姓名</th>
-				<th>佣点</th>
 				<th>系数</th>
-				<th>提佣</th>
+				<th>佣点</th>
+				<th>提佣(元)</th>
 				<th>业务员</th>
 				<th>手机</th>
 				<th>等级</th>
@@ -99,35 +100,35 @@
            <tbody>
 			<tr>
 				<td>1</td>
-				<td>201606150149</td>
-				<td>2015-01-02</td>
+				<td class="contractNumber">201606150149</td>
+				<td class="contractDate">2015-01-02</td>
 				<td>1幢</td>
 				<td>9-3001</td>
-				<td>80</td>
-				<td>80</td>
+				<td class="houseArea">80</td>
+				<td class="houseAmount">80</td>
 				<td>张飞</td>
 				<td>18269795195</td>
 				
-				<td>黄三</td>
-				<td>0.7</td>
-				<td>0.76</td>
-				<td>3000</td>
+				<td class="managerName">黄三</td>
+				<td class="managerGrade">0.7</td>
+				<td class="managerNum">0.76</td>
+				<td class="managerCommission">3000</td>
 				
-				<td>马三</td>
-				<td>0.7</td>
-				<td>0.76</td>
-				<td>2000</td>
+				<td class="chiefName">马三</td>
+				<td class="chiefGrade">0.7</td>
+				<td class="chiefNum">0.76</td>
+				<td class="chiefCommission">2000</td>
 				
-				<td>张三</td>
-				<td>18269795185</td>
-				<td>A级</td>
-				<td>0.7</td>
-				<td>0.76</td>
+				<td class="targetName">张三</td>
+				<td class="targetPhone">18269795185</td>
+				<td class="salerGradeCode">A级</td>
+				<td class="salerGrade">0.7</td>
+				<td class="salerNum">0.76</td>
 				<td>
 				 <div class="tableRow">
 				  <div class="row">
 				     <div class="col-xs-10"  >合计</div>
-				     <div class="col-xs-2">-1000</div>
+				     <div class="col-xs-2 allDebit">-1000</div>
 				  </div>
 				  <div class="row">
 				     <div class="col-xs-10">项目业绩超额超时奖励</div>
@@ -143,9 +144,9 @@
 				  </div>
 				  </div>
 				</td> 
-				<td>5000</td>
-				<td>0.6</td>
-				<td>4000</td> 
+				<td class="shouldAmount">5000</td>
+				<td class="rate">0.6</td>
+				<td class="realAmount">4000</td> 
 				<td>
 				 <a data-toggle="modal" href="#myModal" >审核</a>
 				 <div class="remark">
@@ -178,15 +179,15 @@
 			</tr>
 			<tr>
 				<td>1</td>
-				<td>黄三</td>
-				<td>15345678912</td>
+				<td class="targetName">黄三</td>
+				<td class="targetPhone">15345678912</td>
 				<td>800万元</td>
-				<td>15000</td>
+				<td class="shouldAmount">15000</td>
 				<td>
         		 <div class="tableRow">
 				  <div class="row">
 				     <div class="col-xs-10">合计</div>
-				     <div class="col-xs-2">-1000</div>
+				     <div class="col-xs-2 allDebit">-1000</div>
 				   </div>
 				   <div class="row">
 				      <div class="col-xs-10">项目业绩超额超时奖励</div>
@@ -232,15 +233,15 @@
 			</tr>
 			<tr>
 				<td>1</td>
-				<td>马三</td>
-				<td>14567894231</td>
+				<td class="targetName">马三</td>
+				<td class="targetPhone">14567894231</td>
 				<td>800万元</td>
-				<td>15000</td>
+				<td class="shouldAmount">15000</td>
 				<td>
 				   <div class="tableRow">
 				  <div class="row">
 				     <div class="col-xs-10">合计</div>
-				     <div class="col-xs-2">-1000</div>
+				     <div class="col-xs-2 allDebit">-1000</div>
 				   </div>
 				   <div class="row">
 				      <div class="col-xs-10">项目业绩超额超时奖励</div>
@@ -354,7 +355,12 @@
      var button = $(event.relatedTarget);
      button.addClass("activeCheck");
      var trObj=button.closest("tr");
+     var targetName=trObj.find(".targetName").text();
+     //var targetPhone=trObj.find(".targetPhone").text();
      var modal = $(this);
+     modal.find("#name").text(targetName);
+    // modal.find("#phone").text(targetPhone);
+     
      var status=$.trim(button.text());
      if(status!="审核"){
        modal.find("#status").val(status);
