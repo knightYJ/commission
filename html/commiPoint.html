@@ -8,7 +8,7 @@
 <meta name="HandheldFriendly" content="true">
 <meta name="Description" content="">
 <meta name="Keywords" content="">
-<title>业务员请佣</title>
+<title>配置佣金点数</title>
 </head>
 
 <style>
@@ -36,18 +36,19 @@ table{
 
 <body>
 	<div>
-	<h3 style="text-align:center;">鲁能公馆业务员请佣--配置佣金点数和业务员等级</h3>
+	<h3 style="text-align:center;">配置佣金点数和业务员等级</h3>
 	</div>
 	
 	<table id="commTable">
 			<tr>
-				<td colspan="4">业务员等级对应的系数</td>
+				<td colspan="5">业务员等级对应的系数表</td>
 			</tr>
 			<tr>
 				<td style="width:40px;">序号</td>
 				<td style="width:70px;">业务员等级</td>
 				<td style="width:70px;">对应系数</td>
-				<td style="width:70px;">操作</td>
+				<td style="width:70px;">生效时间</td>
+				<td style="width:70px;">失效时间</td>
 			</tr>
 			<tr class="comm1">
 				<td style="width:40px;">1</td>
@@ -55,11 +56,14 @@ table{
 				<input type="text" value="A级" style="width:70px;"/>
  				</td>
 				<td style="width:70px;">
-				<input type="text" value="0.06" style="width:70px;"/>
+				<input type="text" value="0.06%" style="width:70px;"/>
 				</td>
 				<td style="width:70px;">
-				<a href="javaScript:void(0)" onclick="removeComm(1)">删除</a>
-				</td>  
+				<input type="text" value="2015-01-03" style="width:70px;"/>
+				</td>
+				<td style="width:70px;">
+				<input type="text" value="2015-03-31" style="width:70px;"/>
+				</td>
 			</tr>
 			<tr class="comm2">
 				<td style="width:40px;">2</td>
@@ -67,11 +71,14 @@ table{
 				<input type="text" value="B级" style="width:70px;"/>
  				</td>
 				<td style="width:70px;">
-				<input type="text" value="0.05" style="width:70px;"/>
+				<input type="text" value="0.05%" style="width:70px;"/>
 				</td>
 				<td style="width:70px;">
-				<a href="javaScript:void(0)" onclick="removeComm(2)">删除</a>
-				</td>  
+				<input type="text" value="2015-01-03" style="width:70px;"/>
+				</td>
+				<td style="width:70px;">
+				<input type="text" value="2015-03-31" style="width:70px;"/>
+				</td>
 			</tr>
 			<tr class="comm3">
 				<td style="width:40px;">3</td>
@@ -79,11 +86,14 @@ table{
 				<input type="text" value="C级" style="width:70px;"/>
  				</td>
 				<td style="width:70px;">
-				<input type="text" value="0.04" style="width:70px;"/>
+				<input type="text" value="0.04%" style="width:70px;"/>
 				</td>
 				<td style="width:70px;">
-				<a href="javaScript:void(0)" onclick="removeComm(3)">删除</a>
-				</td>  
+				<input type="text" value="2015-01-03" style="width:70px;"/>
+				</td>
+				<td style="width:70px;">
+				<input type="text" value="2015-03-31" style="width:70px;"/>
+				</td>
 			</tr>
 			<tr class="comm4">
 				<td style="width:40px;">4</td>
@@ -91,11 +101,14 @@ table{
 				<input type="text" value="D级" style="width:70px;"/>
  				</td>
 				<td style="width:70px;">
-				<input type="text" value="0.03" style="width:70px;"/>
+				<input type="text" value="0.03%" style="width:70px;"/>
 				</td>
 				<td style="width:70px;">
-				<a href="javaScript:void(0)" onclick="removeComm(4)">删除</a>
-				</td>  
+				<input type="text" value="2015-01-03" style="width:70px;"/>
+				</td>
+				<td style="width:70px;">
+				<input type="text" value="2015-03-31" style="width:70px;"/>
+				</td>
 			</tr>
 	</table>
 	
@@ -105,31 +118,23 @@ table{
 	
 	<table style="margin-top:30px" id="itemComm">
 			<tr>
-				<td colspan="6">项目佣点表</td>
+				<td colspan="4">项目结佣点数表</td>
 			</tr>
 			<tr>
 				<td style="width:40px;">序号</td>
 				<td style="width:70px;">项目名称</td>
-				<td style="width:70px;">对应佣点</td>
-				<td style="width:70px;">生效时间</td>
-				<td style="width:70px;">失效效时间</td>
-				<td style="width:70px;">操作</td>
+				<td style="width:70px;">项目结佣点数</td>
+				<td style="width:70px;">业务员佣金点数</td>
 			</tr>
 			<tr class="item1">
 				<td style="width:40px;">1</td>
 				<td style="width:70px;">鲁能公馆</td>
 				<td style="width:70px;">
-				<input type="text" value="0.7" style="width:70px;"/>
+				<input type="text" value="1.5" style="width:70px;"/>
 				</td>
 				<td style="width:70px;">
-				<input type="text" value="2015-01-01" style="width:70px;"/>
-				</td>
-				<td style="width:70px;">
-				<input type="text" value="2015-03-31" style="width:70px;"/>
-				</td>
-				<td style="width:70px;">
-				<a href="javaScript:void(0)" onclick="removeItem(1)">删除</a>
-				</td>
+				<a href="javaScript:void(0)" onclick="getSalerPoint()">查看</a>
+				</td>  
 			</tr>
 	</table>
 	
@@ -137,15 +142,79 @@ table{
 	<input type="button" value="新增" onclick="addItem()"/>
 	</div>
 	
+	<table style="margin-top:30px" id="managerComm">
+			<tr>
+				<td colspan="5">项目经理佣金点数表</td>
+			</tr>
+			<tr>
+				<td style="width:40px;">序号</td>
+				<td style="width:70px;">项目名称</td>
+				<td style="width:70px;">项目经理佣金点数</td>
+				<td style="width:70px;">生效时间</td>
+				<td style="width:70px;">失效时间</td>
+			</tr>
+			<tr class="manager1">
+				<td style="width:40px;">1</td>
+				<td style="width:70px;">鲁能公馆</td>
+				<td style="width:70px;">
+				<input type="text" value="1.2" style="width:70px;"/>
+				</td>
+				<td style="width:70px;">
+				<input type="text" value="2015-01-01" style="width:70px;"/>
+				</td>
+				<td style="width:70px;">
+				<input type="text" value="2015-03-01" style="width:70px;"/>
+				</td>   
+			</tr>
+	</table>
+	
+	<div style="margin-top:10px">
+	<input type="button" value="新增" onclick="addManager()"/>
+	</div>
+	
+		<table style="margin-top:30px" id="direComm">
+			<tr>
+				<td colspan="7">总监佣金点数表</td>
+			</tr>
+			<tr>
+				<td style="width:40px;">序号</td>
+				<td style="width:70px;">项目名称</td>
+				<td style="width:70px;">总监姓名</td>
+				<td style="width:70px;">总监手机号</td>
+				<td style="width:70px;">总监佣金点数</td>
+				<td style="width:70px;">生效时间</td>
+				<td style="width:70px;">失效时间</td>
+			</tr>
+			<tr class="dire1">
+				<td style="width:40px;">1</td>
+				<td style="width:70px;">鲁能公馆</td>
+				<td style="width:70px;">
+				<input type="text" value="马三" style="width:70px;"/>
+				</td>
+				<td style="width:70px;">
+				<input type="text" value="18257894561" style="width:70px;"/>
+				</td>
+				<td style="width:70px;">
+				<input type="text" value="1.5" style="width:70px;"/>
+				</td>
+				<td style="width:70px;">
+				<input type="text" value="2015-01-01" style="width:70px;"/>
+				</td>
+				<td style="width:70px;">
+				<input type="text" value="2015-03-01" style="width:70px;"/>
+				</td>   
+			</tr>
+	</table>
+	
+	<div style="margin-top:10px">
+	<input type="button" value="新增" onclick="addDire()"/>
+	</div>
+	
 </body>
 
 <script type="text/javascript" src="../js/jquery-1.10.1.min.js"></script>
   
 <script type="text/javascript">
-//删除等级
-function removeComm(num){
-	$(".comm"+num).css("display","none");
-}
 
 var commHtml="";
 //新增等级 
@@ -156,20 +225,16 @@ function addComm(){
     		 +"<td style='width:40px;text-align:center;'>"+rows+"</td>"//
     		 +"<td style='width:120px;text-align:center;'><input type='text' style='width:50px'/></td>"//
     	     +"<td style='width:70px;text-align:center;'><input type='text' style='width:50px'/></td>"//
-    		 +"<td style='width:70px;text-align:center;'><a href='javaScript:void(0)' onclick='removeComm("+rows+")'>删除</a></td>"//
+    	     +"<td style='width:70px;text-align:center;'><input type='text' style='width:50px'/></td>"//
+    	     +"<td style='width:70px;text-align:center;'><input type='text' style='width:50px'/></td>"//
     		 +"</tr>"  
     		 
     $("#commTable").append(commHtml);	//添加表单 	 
     commHtml="";
 }
-
-//删除 项目
-function removeItem(num){
-	$(".item"+num).css("display","none");
-}
  
 var itemHtml="";
-//新增项目 
+//新增项目结佣  
 function addItem(){
 	var rows=document.getElementById("itemComm").rows.length - 1; //表单行数 
 	
@@ -177,15 +242,53 @@ function addItem(){
     		 +"<td style='width:40px;text-align:center;'>"+rows+"</td>"//
     		 +"<td style='width:120px;text-align:center;'><input type='text' style='width:50px'/></td>"//
     	     +"<td style='width:70px;text-align:center;'><input type='text' style='width:50px'/></td>"//
-    	     +"<td style='width:70px;text-align:center;'><input type='text' style='width:50px'/></td>"//
-    	     +"<td style='width:70px;text-align:center;'><input type='text' style='width:50px'/></td>"//
-    		 +"<td style='width:70px;text-align:center;'><a href='javaScript:void(0)' onclick='removeItem("+rows+")'>删除</a></td>"//
+    	     +"<td style='width:70px;text-align:center;'><a href='javaScript:void(0)' onclick='getSalerPoint()'>查看</a></td>"//
     		 +"</tr>"  
     		 
     $("#itemComm").append(itemHtml);	//添加表单 	 
     itemHtml="";
 }
 
+var ManaHtml="";
+//新增项目经理佣金点数  
+function addManager(){
+	var rows=document.getElementById("managerComm").rows.length - 1; //表单行数 
+	
+	ManaHtml+="<tr class=manager"+rows+">"//
+  		 +"<td style='width:40px;text-align:center;'>"+rows+"</td>"//
+  		 +"<td style='width:120px;text-align:center;'><input type='text' style='width:50px'/></td>"//
+  	     +"<td style='width:70px;text-align:center;'><input type='text' style='width:50px'/></td>"//
+  	   	 +"<td style='width:70px;text-align:center;'><input type='text' style='width:50px'/></td>"//
+  	 	 +"<td style='width:70px;text-align:center;'><input type='text' style='width:50px'/></td>"//
+  		 +"</tr>"  
+  		 
+  $("#managerComm").append(ManaHtml);	//添加表单 	 
+  ManaHtml="";
+}
+
+var direHtml="";
+//新增总监佣金点数   
+function addDire(){
+	var rows=document.getElementById("direComm").rows.length - 1; //表单行数 
+	
+	direHtml+="<tr class=dire"+rows+">"//
+		 	+"<td style='width:40px;text-align:center;'>"+rows+"</td>"//
+		 	+"<td style='width:120px;text-align:center;'><input type='text' style='width:50px'/></td>"//
+		 	+"<td style='width:120px;text-align:center;'><input type='text' style='width:50px'/></td>"//
+	     	+"<td style='width:70px;text-align:center;'><input type='text' style='width:50px'/></td>"//
+	     	+"<td style='width:70px;text-align:center;'><input type='text' style='width:50px'/></td>"//
+	   	 	+"<td style='width:70px;text-align:center;'><input type='text' style='width:50px'/></td>"//
+	 		+"<td style='width:70px;text-align:center;'><input type='text' style='width:50px'/></td>"//
+			+"</tr>"  
+		 
+	$("#direComm").append(direHtml);	//添加表单 	 
+	direHtml="";
+}
+
+//查看业务员佣金点数  
+function getSalerPoint(){
+	window.location.href="salerPoint.html";
+}
 	
 </script>
 

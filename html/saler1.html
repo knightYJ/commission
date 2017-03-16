@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="wap-font-scale" content="no">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+<meta name="Description" content="">
+<meta name="Keywords" content="">
+<title>佣金明细页(查看)</title>
+</head>
+
+<style>
+
+table,table tr td{
+	border:1px solid #0094ff;
+}
+
+table{
+	width:100%;
+	max-height:25px;
+	line-height:25px;
+	text-align:center;
+	border-collapse:collapse; 
+}
+
+#beizhu{
+	margin-top:20px;
+	font-size:17px;
+	color:#F51818;
+	margin-bottom:10px;
+} 
+#beizhu1{
+	margin-top:20px;
+	font-size:17px;
+	margin-bottom:10px;
+} 
+.black_overlay{
+       display: none;
+       position:absolute;
+       top: 0%;
+       left: 0%;
+       width: 100%;
+       height: 100%;
+       background-color: black;
+       z-index:1000;
+       -moz-opacity: 0.8;
+       opacity: .80;
+       filter:alpha(opacity=80);
+}
+.white_content{
+      display:none;
+      position:absolute;
+      top:10%;
+      width:95%;
+      height:50%;
+      background-color:white;
+      z-index:1000;
+      overflow: auto;
+	  text-align:center;
+	  font-size:16px;
+	  left:2%
+}
+</style>
+
+<body>
+	<div>
+	<h3 style="text-align:center;">鲁能公馆业务员请佣--项目上佣金明细页面</h3>
+	</div>
+
+	<div id="beizhu"> 
+	该项目的请佣金额为:50万,实际到账为:20万。 
+	</div>
+	
+	<table id="salerTable">
+			<tr>
+				<td colspan="17">业务员佣金明细表</td>
+			</tr>
+			<tr>
+				<td style="width:40px;">序号</td>
+				<td style="width:120px;">合同编号</td>
+				<td style="width:70px;">楼栋号</td>
+				<td style="width:70px;">室号</td>
+				<td style="width:120px;">房屋面积(平米)</td>
+				<td style="width:120px;">房屋总价(万)</td>
+				<td style="width:120px;">成交时间</td>
+				<td style="width:70px;">业主姓名</td>
+				<td style="width:120px;">业主手机号</td>
+				<td style="width:90px;">业务员姓名</td>
+				<td style="width:120px;">业务员手机号</td>
+				<td style="width:90px;">业务员等级</td>
+				<td style="width:120px;">业务员佣点</td>
+				<td style="width:120px;">等级对应的系数</td>
+				<td style="width:70px;">其他款项</td>
+				<td style="width:120px;">业务员佣金(元)</td>
+			</tr>
+			<tr class="saler1">
+				<td style="width:40px;">1</td>
+				<td style="width:120px;">4654zxc</td>
+				<td style="width:70px;">1幢</td>
+				<td style="width:70px;">102</td>
+				<td style="width:120px;">80</td>
+				<td style="width:120px;">80</td>
+				<td style="width:120px;">2015-01-02</td>
+				<td style="width:70px;">张飞</td>
+				<td style="width:120px;">18269795195</td>
+				<td style="width:90px;">张三</td>
+				<td style="width:120px;">18269795185</td>
+				<td style="width:90px;">A级</td>
+				<td style="width:120px;">0.7%</td>
+				<td style="width:120px;">0.06%</td>
+				<td style="width:70px;">100</td> 
+				<td style="width:120px;">1400</td>
+			</tr>
+			<tr class="saler2">
+				<td style="width:40px;">2</td>
+				<td style="width:120px;">zcx6546</td>
+				<td style="width:70px;">1幢</td>
+				<td style="width:70px;">201</td>
+				<td style="width:120px;">80</td>
+				<td style="width:120px;">80</td>
+				<td style="width:120px;">2015-01-05</td>
+				<td style="width:70px;">刘备</td>
+				<td style="width:120px;">18269795145</td>
+				<td style="width:90px;">李四</td>
+				<td style="width:120px;">18269795245</td>
+				<td style="width:90px;">B级</td>
+				<td style="width:120px;">0.7%</td>
+				<td style="width:120px;">0.05%</td>
+				<td style="width:70px;"></td>
+				<td style="width:120px;">1300</td>
+			</tr>
+			<tr class="saler3">
+				<td style="width:40px;">3</td>
+				<td style="width:120px;">scsda154</td>
+				<td style="width:70px;">1幢</td>
+				<td style="width:70px;">303</td>
+				<td style="width:120px;">80</td>
+				<td style="width:120px;">80</td>
+				<td style="width:120px;">2015-01-07</td>
+				<td style="width:70px;">关羽</td>
+				<td style="width:120px;">18269795789</td>
+				<td style="width:90px;">王五</td>
+				<td style="width:120px;">18269795536</td>
+				<td style="width:90px;">C级</td>
+				<td style="width:120px;">0.7%</td>
+				<td style="width:120px;">0.04%</td>
+				<td style="width:70px;"></td>
+				<td style="width:120px;">1200</td>
+			</tr>
+			<tr class="saler4">
+				<td style="width:40px;">4</td>
+				<td style="width:120px;">656zcz</td>
+				<td style="width:70px;">1幢</td>
+				<td style="width:70px;">503</td>
+				<td style="width:120px;">80</td>
+				<td style="width:120px;">80</td>
+				<td style="width:120px;">2015-01-12</td>
+				<td style="width:70px;">赵云</td>
+				<td style="width:120px;">18269795425</td>
+				<td style="width:90px;">赵六</td>
+				<td style="width:120px;">1826979234</td>
+				<td style="width:90px;">D级</td>
+				<td style="width:120px;">0.7%</td>
+				<td style="width:120px;">0.03%</td>
+				<td style="width:70px;"></td>
+				<td style="width:120px;">1100</td>
+			</tr>
+	</table>
+	
+	<table style="margin-top:30px" id="manaTable">
+			<tr>
+				<td colspan="7">项目经理佣金明细表</td>
+			</tr>
+			<tr>
+				<td style="width:40px;">序号</td>
+				<td style="width:70px;">项目经理姓名</td>
+				<td style="width:70px;">项目经理手机号</td>
+				<td style="width:70px;">项目经理佣点</td>
+				<td style="width:70px;">其他款项</td>
+				<td style="width:120px;">项目经理佣金(元)</td>
+			</tr>
+			<tr class="manager1">
+				<td style="width:40px;">1</td>
+				<td style="width:70px;">黄三</td>
+				<td style="width:70px;">15345678912</td>
+				<td style="width:70px;">1.2%</td>
+				<td style="width:70px;">100</td>
+				<td style="width:120px;">2000</td>
+			</tr>
+	</table>
+	
+	<table style="margin-top:30px" id="direTable">
+			<tr>
+				<td colspan="7">总监佣金明细表</td>
+			</tr>
+			<tr>
+				<td style="width:40px;">序号</td>
+				<td style="width:70px;">总监姓名</td>
+				<td style="width:70px;">总监手机号</td>
+				<td style="width:70px;">总监佣点</td>
+				<td style="width:70px;">其他款项</td>
+				<td style="width:120px;">总监佣金(元)</td>
+			</tr>
+			<tr class="director1">
+				<td style="width:40px;">1</td>
+				<td style="width:70px;">马三</td>
+				<td style="width:70px;">14567894231</td>
+				<td style="width:70px;">1.5%</td>
+				<td style="width:70px;">100</td>
+				<td style="width:120px;">3000</td>
+			</tr>
+	</table>
+	
+	<div style="margin-top:50px;margin-left:50%">
+		<input type="button" value="返回" id="Commission" name="Commission"/>  
+	</div>
+		
+</body>
+
+<script type="text/javascript" src="../js/jquery-1.10.1.min.js"></script>
+
+	
+  
+<script type="text/javascript">
+	
+	$("#Commission").click(function(){
+		window.location.href="itemFinance.html";
+	});
+	
+</script>
+
+</html>

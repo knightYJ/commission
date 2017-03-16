@@ -29,7 +29,7 @@ table{
 
 <body>
 	<div>
-	<h3 style="text-align:center;">鲁能公馆业务员请佣--财务部分</h3>
+	<h3 style="text-align:center;">财务是否到账页面</h3>
 	</div>
 	<table id="table1">
 			<tr>
@@ -42,11 +42,10 @@ table{
 				<td style="width:40px;text-align:center;">1</td>
 				<td style="width:70px;text-align:center;">50</td>
 				<td style="width:70px;text-align:center;">
-				<input type="text" value=" " style="width:50px;text-align:center;" id="actual1" onchange="getActual(1)"/> 
+				<input type="text" value=" " style="width:50px;text-align:center;" id="actual1" onblur="getActual(1)"/> 
 				</td>
 				<td style="width:70px;text-align:center;">
-				<a href="javaScript:void(0)" onclick="toSaler()" style="display:none;" id="quan1">全到账</a>
-				<a href="javaScript:void(0)" onclick="toSaler1()" style="display:none;" id="bufen1">部分到账</a>
+				<a href="javaScript:void(0)" onclick="toSaler()" style="display:none;" id="quan1">到账</a>
 				</td> 
 			</tr>
 	</table>
@@ -63,7 +62,7 @@ table{
 	//更改实际到账佣金  
 	function getActual(num){
 		var financel1=$("#financel1").find("td:eq(1)").text(); //请佣佣金
-		var actual=$("#actual"+num).val(); //实际到账佣金 
+		var actual=$.trim($("#actual"+num).val()); //实际到账佣金 
 		
 		var count=0;
 		for(var i=1;i<=num;i++){
@@ -71,14 +70,15 @@ table{
 			count=Number(count) + Number(actuals);
 		}
 		
-		if(actual !=null){
+		if(actual !=null && actual.length !=0){
 		  if(actual > financel1){
 			  alert("实际到账的佣金不能超过请佣佣金!"); 
 			  return;
 		  }else if(actual==financel1 || count==financel1){	//全部到账
 			  $("#quan"+num).show();	 
-		  }else if(actual < financel1){ //部分到账 
-			  $("#bufen"+num).show();
+		  }else if(actual < financel1){ //部分到账
+			  var str=prompt("请输入佣金未全到账的原因","");  
+			  $("#quan"+num).show();   
 		  	  $("#addTable").show();	
 		  }	
 		}
@@ -93,7 +93,7 @@ table{
 		html+="<tr id=financel"+rows+">"//
 		    +"<td style='width:40px;text-align:center;'>"+rows+"</td>"//
 		    +"<td style='width:70px;text-align:center;'>"+financel1+"</td>"//
-		    +"<td style='width:70px;text-align:center;'><input type='text' value='' style='width:50px;text-align:center;' id=actual"+rows+" onchange='getActual("+rows+")'/></td>"//
+		    +"<td style='width:70px;text-align:center;'><input type='text' value='' style='width:50px;text-align:center;' id=actual"+rows+" onblur='getActual("+rows+")'/></td>"//
 		    +"<td style='width:70px;text-align:center;'><a href='javaScript:void(0)' onclick='toSaler()' style='display:none;' id=quan"+rows+">全到账</a>"
 		    +"<a href='javaScript:void(0)' onclick='toSaler1()' style='display:none;' id=bufen"+rows+">部分到账</a></td>"//
 		    +"</tr>" 
@@ -105,10 +105,6 @@ table{
 
 	//到账后通知项目 (全到账) 
 	function toSaler(){
-		window.location.href="saler.html";
-	}
-	//到账后通知项目 (全到账) 
-	function toSaler1(){
 		window.location.href="saler.html";
 	}
 </script>
