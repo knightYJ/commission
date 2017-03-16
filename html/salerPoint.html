@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="wap-font-scale" content="no">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+<meta name="Description" content="">
+<meta name="Keywords" content="">
+<title>业务员佣金点数</title>
+</head>
+        
+<style>
+
+table,table tr td{
+	border:1px solid #0094ff;
+}
+
+table{
+	width:100%;
+	max-height:25px;
+	line-height:25px;
+	text-align:center;
+	border-collapse:collapse; 
+}
+
+#beizhu{
+	margin-top:20px;
+	font-size:17px;
+	color:#F51818;
+} 
+
+</style>
+
+<body>
+	
+	<div>
+	<h3 style="text-align:center;">编辑业务员佣金点数</h3>
+	</div>
+	
+	<div id="beizhu"> 
+	 (备注:业务员的佣金点数是和其所在的项目进行绑定。) 
+	</div>
+	
+	<table style="margin-top:5px" id="salerComm">
+			<tr>
+				<td colspan="5">业务员佣金点数表</td>
+			</tr>
+			<tr>
+				<td style="width:40px;">序号</td>
+				<td style="width:70px;">项目名称</td>
+				<td style="width:70px;">业务员佣金点数</td>
+				<td style="width:70px;">生效时间</td>
+				<td style="width:70px;">失效时间</td>
+			</tr>
+			<tr class="saler1">
+				<td style="width:40px;">1</td>
+				<td style="width:70px;">鲁能公馆</td>
+				<td style="width:70px;">
+				<input type="text" value="0.7" style="width:70px;"/>
+				</td>
+				<td style="width:70px;">
+				<input type="text" value="2015-01-01" style="width:70px;"/>
+				</td>
+				<td style="width:70px;">
+				<input type="text" value="2015-03-01" style="width:70px;"/>
+				</td>   
+			</tr>
+			<tr class="saler1">
+				<td style="width:40px;">1</td>
+				<td style="width:70px;">鲁能公馆</td>
+				<td style="width:70px;">
+				<input type="text" value="0.6" style="width:70px;"/>
+				</td>
+				<td style="width:70px;">
+				<input type="text" value="2016-01-01" style="width:70px;"/>
+				</td>
+				<td style="width:70px;">
+				<input type="text" value="2016-03-01" style="width:70px;"/>
+				</td>   
+			</tr>
+	</table>
+	
+	<div style="margin-top:10px">
+	<input type="button" value="新增" onclick="addSaler()"/>
+	</div>
+	
+</body>
+
+<script type="text/javascript" src="../js/jquery-1.10.1.min.js"></script>
+  
+<script type="text/javascript">
+
+var salerHtml="";
+//新增业务员佣金点数   
+function addSaler(){
+	var rows=document.getElementById("salerComm").rows.length - 1; //表单行数 
+	
+	salerHtml+="<tr class=saler"+rows+">"//
+  		 	 +"<td style='width:40px;text-align:center;'>"+rows+"</td>"//
+  		 	 +"<td style='width:120px;text-align:center;'>鲁能公馆</td>"// 
+  	     	 +"<td style='width:70px;text-align:center;'><input type='text' style='width:50px'/></td>"//
+  	   	 	 +"<td style='width:70px;text-align:center;'><input type='text' style='width:50px'/></td>"//
+  	 	 	 +"<td style='width:70px;text-align:center;'><input type='text' style='width:50px'/></td>"//
+  		 	 +"</tr>"  
+  		 
+  $("#salerComm").append(salerHtml);	//添加表单 	 
+  salerHtml="";
+}
+
+</script>
+
+</html>

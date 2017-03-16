@@ -8,14 +8,14 @@
 <meta name="HandheldFriendly" content="true">
 <meta name="Description" content="">
 <meta name="Keywords" content="">
-<title>业务员请佣</title>
+<title>佣金明细页(更新)</title>
 </head>
 
 <style>
 
 table,table tr td{
 	border:1px solid #0094ff;
-}
+}         
 
 table{
 	width:100%;
@@ -31,19 +31,50 @@ table{
 	color:#F51818;
 	margin-bottom:10px;
 } 
-
+#beizhu1{
+	margin-top:20px;
+	font-size:17px;
+	margin-bottom:10px;
+} 
+.black_overlay{
+       display: none;
+       position:absolute;
+       top: 0%;
+       left: 0%;
+       width: 100%;
+       height: 100%;
+       background-color: black;
+       z-index:1000;
+       -moz-opacity: 0.8;
+       opacity: .80;
+       filter:alpha(opacity=80);
+}
+.white_content{
+      display:none;
+      position:absolute;
+      top:10%;
+      width:95%;
+      height:50%;
+      background-color:white;
+      z-index:1000;
+      overflow: auto;
+	  text-align:center;
+	  font-size:16px;
+	  left:2%
+}
 </style>
 
 <body>
 	<div>
-	<h3 style="text-align:center;">鲁能公馆业务员请佣--项目上的佣金明细</h3>
+	<h3 style="text-align:center;">鲁能公馆业务员请佣--项目上佣金明细页面</h3>
+	</div>
+	
+	<div id="beizhu"> 
+	(备注:业务员对应的等级在什么地方进行维护?) 
 	</div>
 	
 	<div id="beizhu"> 
 	该项目的请佣金额为:50万,实际到账为:30万。 
-	<div style="float:right;"> 
-	<input type="button" value="配置佣点和等级" onclick="getYong()"/> 
-	</div> 
 	</div>
 	
 	<table id="salerTable">
@@ -64,7 +95,7 @@ table{
 				<td style="width:120px;">业务员手机号</td>
 				<td style="width:90px;">业务员等级</td>
 				<td style="width:120px;">业务员佣点</td>
-				<td style="width:120px;">业务员实际佣点</td>
+				<td style="width:120px;">等级对应的系数</td>
 				<td style="width:70px;">其他款项</td>
 				<td style="width:120px;">业务员佣金(元)</td>
 				<td style="width:70px;">操作</td>
@@ -82,12 +113,12 @@ table{
 				<td style="width:90px;">张三</td>
 				<td style="width:120px;">18269795185</td>
 				<td style="width:90px;">A级</td>
-				<td style="width:120px;">0.7</td>
-				<td style="width:120px;">0.76</td>
+				<td style="width:120px;">0.7%</td>
+				<td style="width:120px;">0.06%</td>
 				<td style="width:70px;">
-				<input type="text" id="otherFin1" onfocus="getOther(1)" style="width:50px"/>  
+				<input type="text" id="otherFin1" onfocus="getOther(1,1)" style="width:50px"/>  
 				</td> 
-				<td style="width:120px;">?</td>
+				<td style="width:120px;"></td>
 				<td style="width:70px;">
 				<a href="javaScript:void(0)" onclick="removeSaler(1)">移除</a>
 				</td>  
@@ -105,12 +136,12 @@ table{
 				<td style="width:90px;">李四</td>
 				<td style="width:120px;">18269795245</td>
 				<td style="width:90px;">B级</td>
-				<td style="width:120px;">0.7</td>
-				<td style="width:120px;">0.75</td>
+				<td style="width:120px;">0.7%</td>
+				<td style="width:120px;">0.05%</td>
 				<td style="width:70px;">
-				<input type="text" id="otherFin2" onfocus="getOther(2)" style="width:50px"/>
+				<input type="text" id="otherFin2" onfocus="getOther(2,1)" style="width:50px"/>
 				</td>
-				<td style="width:120px;">?</td>
+				<td style="width:120px;"></td>
 				<td style="width:70px;">
 				<a href="javaScript:void(0)" onclick="removeSaler(2)">移除</a>
 				</td>  
@@ -128,12 +159,12 @@ table{
 				<td style="width:90px;">王五</td>
 				<td style="width:120px;">18269795536</td>
 				<td style="width:90px;">C级</td>
-				<td style="width:120px;">0.7</td>
-				<td style="width:120px;">0.74</td>
+				<td style="width:120px;">0.7%</td>
+				<td style="width:120px;">0.04%</td>
 				<td style="width:70px;">
-				<input type="text" id="otherFin3" onfocus="getOther(3)" style="width:50px"/>
+				<input type="text" id="otherFin3" onfocus="getOther(3,1)" style="width:50px"/>
 				</td>
-				<td style="width:120px;">?</td>
+				<td style="width:120px;"></td>
 				<td style="width:70px;">
 				<a href="javaScript:void(0)" onclick="removeSaler(3)">移除</a>
 				</td>  
@@ -151,12 +182,12 @@ table{
 				<td style="width:90px;">赵六</td>
 				<td style="width:120px;">1826979234</td>
 				<td style="width:90px;">D级</td>
-				<td style="width:120px;">0.7</td>
-				<td style="width:120px;">0.73</td>
+				<td style="width:120px;">0.7%</td>
+				<td style="width:120px;">0.03%</td>
 				<td style="width:70px;">
-				<input type="text" id="otherFin4" onfocus="getOther(4)" style="width:50px"/>
+				<input type="text" id="otherFin4" onfocus="getOther(4,1)" style="width:50px"/>
 				</td>
-				<td style="width:120px;">?</td>
+				<td style="width:120px;"></td>
 				<td style="width:70px;">
 				<a href="javaScript:void(0)" onclick="removeSaler(4)">移除</a>
 				</td>  
@@ -165,7 +196,6 @@ table{
 	
 	<div style="margin-top:10px">
 	<input type="button" value="新增" onclick="addSaler()"/> 
-	<input type="button" value="还原" onclick="reductionSaler()"/>    
 	</div>
 	
 	<table style="margin-top:30px" id="manaTable">
@@ -185,11 +215,11 @@ table{
 				<td style="width:40px;">1</td>
 				<td style="width:70px;">黄三</td>
 				<td style="width:70px;">15345678912</td>
-				<td style="width:70px;">1.2</td>
-				<td style="width:70px;">?
-				<input type="text" id="otherFin4" onfocus="getManaOther(1)" style="width:50px"/>
+				<td style="width:70px;">1.2%</td>
+				<td style="width:70px;">
+				<input type="text"  onfocus="getOther(1,2)" style="width:50px"/>
 				</td>
-				<td style="width:120px;">?</td>
+				<td style="width:120px;"></td>
 				<td style="width:70px;">
 				<a href="javaScript:void(0)" onclick="removeManager(1)">移除</a>
 				</td>
@@ -198,7 +228,6 @@ table{
 	
 	<div style="margin-top:10px">
 	<input type="button" value="新增" onclick="addManager()"/>
-	<input type="button" value="还原" onclick="reductionMana()"/>   
 	</div>
 	
 	<table style="margin-top:30px" id="direTable">
@@ -218,9 +247,11 @@ table{
 				<td style="width:40px;">1</td>
 				<td style="width:70px;">马三</td>
 				<td style="width:70px;">14567894231</td>
-				<td style="width:70px;">1.5</td>
-				<td style="width:70px;">?</td>
-				<td style="width:120px;">?</td>
+				<td style="width:70px;">1.5%</td>
+				<td style="width:70px;">
+				<input type="text" onfocus="getOther(1,3)" style="width:50px"/>
+				</td>
+				<td style="width:120px;"></td>
 				<td style="width:70px;">
 				<a href="javaScript:void(0)" onclick="removedirector(1)">移除</a>
 				</td>
@@ -229,35 +260,37 @@ table{
 	
 	<div style="margin-top:10px">
 	<input type="button" value="新增" onclick="addDirector()"/>
-	<input type="button" value="还原" onclick="reductionDir()"/>   
 	</div>
 	
 	<div style="margin-top:50px;margin-left:50%">
-		<a type="button" href="projectList.html" id="Commission" name="Commission"/> 发起请佣  </a>
+		<input type="button" value="发起请佣" id="Commission" name="Commission"/>  
 	</div>
 	
-	<div style="display:none;margin-top:30px" id="otherFinance">
-		<table id="otherTable">
+	<div id="fade" class="black_overlay"></div>
+	<div style="display:none;margin-top:30px;" id="otherFinance" class="white_content">
+	  <div id="beizhu" style="float:left;margin-left:30px">
+	  '+'号表示奖励,'-'号表示扣款	
+	  </div>
+	  <div id="beizhu1" style="float:right;">
+	  <span onclick="closeDiv()">关闭</span>	
+	  </div>	
+		<table id="otherTable" style="width:96% ! important;margin-left:30px">
 			<tr>
-			<td colspan="5">奖励和扣款信息</td>
+			<td colspan="3">奖励和扣款信息</td>
 			</tr>
 			<tr>
 				<td>序号</td>
-				<td>扣款(元)</td>
-				<td>扣款备注</td>
-				<td>奖励(元)</td>
-				<td>奖励备注</td>
+				<td>金额(元)</td>
+				<td>备注信息</td>
 			</tr>
 			<tr class="otherTr1">
 				<td>1</td>
 				<td>
+				<select>
+					<option>+</option>
+					<option>-</option>
+				</select>
 				<input type="text" style="width:100px"/> 
-				</td>
-				<td>
-				<input type="text" style="width:100px"/>
-				</td>
-				<td>
-				<input type="text" style="width:100px"/>
 				</td>
 				<td>
 				<input type="text" style="width:100px"/>
@@ -265,7 +298,7 @@ table{
 			</tr>
 		</table>
 		
-		<div style="margin-top:10px">
+		<div style="margin-top:10px;float:left;margin-left:30px">
 		<input type="button" value="新增" onclick="addOtherTa()"/>
 		<input type="button" value="确定" onclick="addOtherFin()"/>
 		</div>
@@ -274,26 +307,18 @@ table{
 </body>
 
 <script type="text/javascript" src="../js/jquery-1.10.1.min.js"></script>
+
   
 <script type="text/javascript">
-	var salerNum= new Array();
 	//移除业务员  
 	function removeSaler(num){
 		$(".saler"+num).css("display","none");
-		salerNum.push(num);
 	}
-	
-	//还原业务员  
-	function reductionSaler(){
-		 for(var i=0;i<salerNum.length;i++){
-			 $(".saler"+salerNum[i]).show();
-		} 
-	}
-	
+
 	var salerHtml="";
 	//新增业务员
 	function addSaler(){
-		var yongdian=$(".manager1").find("td:eq(3)").text(); //请佣佣金
+		var yongdian=$(".saler1").find("td:eq(12)").text(); //请佣佣金
 		var rows=document.getElementById("salerTable").rows.length - 1; //表单行数 
 		
 		salerHtml+="<tr class=saler"+rows+">"//
@@ -311,8 +336,8 @@ table{
 	    		 +"<td style='width:90px;text-align:center;'><input type='text' style='width:50px'/></td>"//
 	    		 +"<td style='width:120px;text-align:center;'>"+yongdian+"</td>"//
 	    		 +"<td style='width:70px;text-align:center;'><input type='text' style='width:50px'/></td>"//
-	    		 +"<td style='width:70px;text-align:center;'><input type='text' style='width:50px'/></td>"//
-	    		 +"<td style='width:120px;text-align:center;'><input type='text' style='width:50px'/></td>"//
+	    		 +"<td style='width:70px;text-align:center;'><input type='text' onfocus='getOther("+rows+",1)' style='width:50px'/></td>"//
+	    		 +"<td style='width:120px;text-align:center;'></td>"//
 	    		 +"<td style='width:70px;text-align:center;'><a href='javaScript:void(0)' onclick='removeSaler("+rows+")'>移除</a></td>"//
 	    		 +"</tr>" 
 	    		 
@@ -321,10 +346,8 @@ table{
 		}
 	
 	//移除经理 
-	var ManaNum= new Array();
 	function removeManager(num){
 		$(".manager"+num).css("display","none");
-		ManaNum.push(num);
 	}
 	
 	var ManaHtml="";
@@ -341,8 +364,8 @@ table{
 	    		 +"<td style='width:120px;text-align:center;'><input type='text' style='width:50px'/></td>"//
 	    	     +"<td style='width:70px;text-align:center;'><input type='text' style='width:50px'/></td>"//
 	    		 +"<td style='width:70px;text-align:center;'>"+yongdian+"</td>"//
-	    		 +"<td style='width:120px;text-align:center;'><input type='text' style='width:50px'/></td>"//
-	    		 +"<td style='width:120px;text-align:center;'><input type='text' style='width:50px'/></td>"//
+	    		 +"<td style='width:120px;text-align:center;'><input type='text' onfocus='getOther("+rows+",2)' style='width:50px'/></td>"//
+	    		 +"<td style='width:120px;text-align:center;'></td>"//
 	    		 +"<td style='width:70px;text-align:center;'><a href='javaScript:void(0)' onclick='removeManager("+rows+")'>移除</a></td>"//
 	    		 +"</tr>" 
 	    		 
@@ -350,18 +373,10 @@ table{
 	    ManaHtml="";
 		}
 	
-	//还原经理 
-	function reductionMana(){
-		 for(var i=0;i<ManaNum.length;i++){
-			 $(".manager"+ManaNum[i]).show();
-		} 
-	}
 	
 	//移除总监 
-	var direNum= new Array();
 	function removedirector(num){
 		$(".director"+num).css("display","none");
-		direNum.push(num);
 	}
 	
 	var direHtml="";
@@ -378,8 +393,8 @@ table{
 	    		 +"<td style='width:120px;text-align:center;'><input type='text' style='width:50px'/></td>"//
 	    	     +"<td style='width:70px;text-align:center;'><input type='text' style='width:50px'/></td>"//
 	    		 +"<td style='width:70px;text-align:center;'>"+yongdian+"</td>"//
-	    		 +"<td style='width:120px;text-align:center;'><input type='text' style='width:50px'/></td>"//
-	    		 +"<td style='width:120px;text-align:center;'><input type='text' style='width:50px'/></td>"//
+	    		 +"<td style='width:120px;text-align:center;'><input type='text' onfocus='getOther("+rows+",3)' style='width:50px'/></td>"//
+	    		 +"<td style='width:120px;text-align:center;'></td>"//
 	    		 +"<td style='width:70px;text-align:center;'><a href='javaScript:void(0)' onclick='removedirector("+rows+")'>移除</a></td>"//
 	    		 +"</tr>" 
 	    		 
@@ -387,64 +402,119 @@ table{
 	    direHtml="";
 		}
 	
-	//还原总监 
-	function reductionDir(){
-		 for(var i=0;i<direNum.length;i++){
-			 $(".director"+direNum[i]).show();
-		} 
-	}
-	
-	//配置佣金点数和等级
-	function getYong(){
-		window.location.href="commiPoint.html";
-	}
-	
 	
 	var otherFinNum=0;
+	var otherFinNum2=0;
 	//其他款项
-	function getOther(num){
-		$("#otherFinance").show();
-		otherFinNum=num;
-		
+	function getOther(num1,num2){
+		document.getElementById("otherFinance").style.display ='block';
+	  	document.getElementById("fade").style.display ='block';
+		var bgdiv = document.getElementById("fade");
+	    bgdiv.style.width = document.body.scrollWidth;
+	    $("#fade").height($(document).height());
+	    
+		otherFinNum=num1;
+		otherFinNum2=num2;
 	}
 	
+	//新增其他款项 
 	function addOtherFin(){
-		var rows=document.getElementById("otherTable").rows.length - 2; //其他款项表单行数  
+		var rows;
+		var count=0; //总金额
+		var finCount="";//金额详细信息
 		
-		var kcount=0; //总扣款
-		var jcount=0; //总奖励 
+	if(otherFinNum2 ==1){
+		rows=document.getElementById("otherTable").rows.length - 2; //其他款项表单行数  
+		
 		for(var i=1;i<=rows;i++){
-			var kFinance=$(".otherTr"+i).find("td:eq(1)").find("input:text").val();
-			var jFinance=$(".otherTr"+i).find("td:eq(3)").find("input:text").val();
+			var kFinance=$(".otherTr"+i).find("td:eq(1)").find("input:text").val();	//填写的金额
+			var fuhao=$(".otherTr"+i).find("td:eq(1)").find("select").val();	//选中的符号
+			var beizhu=$.trim($(".otherTr"+i).find("td:eq(2)").find("input:text").val());	//备注  
 			
-			kcount=Number(kcount) + Number(kFinance);
-			jcount=Number(jcount) + Number(jFinance);
+			if(fuhao =="+"){
+				count=Number(count) + Number(kFinance);
+			}else if(fuhao == "-"){
+				count=Number(count) - Number(kFinance);
+			}
+			
+			if(beizhu ==null || beizhu ==""){
+				alert("备注信息不能为空!");
+				return;
+			}
+			
+			finCount=finCount+fuhao+kFinance
+			
 		}
 		
-		var str="现有佣金加上"+kcount+"元,扣掉"+jcount+"元";  
 		 
-		$(".saler"+otherFinNum).find("td:eq(14)").find("input:text").val(str); //其他款项
-		var yongdain=$(".saler"+otherFinNum).find("td:eq(13)").text();	//佣点
+		$(".saler"+otherFinNum).find("td:eq(14)").find("input:text").val(count); //其他款项
+		var yongdain=$(".saler"+otherFinNum).find("td:eq(13)").text().replace("%","");	//佣点
+		var yongdain1=$(".saler"+otherFinNum).find("td:eq(12)").text().replace("%","");	//系数 
 		
-		var salerNum=300000 * Number(yongdain) * 0.01 - Number(kcount) + Number(jcount);
+		var count1=Number(yongdain) + Number(yongdain1); //总佣点 
+		
+		var salerNum=300000 * Number(count1) * 0.01 + Number(count);
+		
 		$(".saler"+otherFinNum).find("td:eq(15)").text(salerNum); //业务员佣金 
 		
-		$("#otherFinance").css("display","none");
+	}else if(otherFinNum2 ==2){
+		rows=document.getElementById("manaTable").rows.length - 2; //其他款项表单行数  
 		
-		if(rows > 1){
+		for(var i=1;i<=rows;i++){
+			var kFinance=$(".otherTr"+i).find("td:eq(1)").find("input:text").val();
+			var fuhao=$(".otherTr"+i).find("td:eq(1)").find("select").val();
+			if(fuhao =="+"){
+				count=Number(count) + Number(kFinance);
+			}else if(fuhao == "-"){
+				count=Number(count) - Number(kFinance);
+			}
+			finCount=finCount+fuhao+kFinance
+		}
+		
+		 
+		$(".manager"+otherFinNum).find("td:eq(4)").find("input:text").val(count); //其他款项
+		var yongdain=$(".manager"+otherFinNum).find("td:eq(3)").text().replace("%","");	//佣点
+		
+		var salerNum=300000 * Number(yongdain) * 0.01 + Number(count);
+		
+		$(".manager"+otherFinNum).find("td:eq(5)").text(salerNum); //佣金 
+		
+	}else if(otherFinNum2 ==3){
+		rows=document.getElementById("direTable").rows.length - 2; //其他款项表单行数  
+		
+		for(var i=1;i<=rows;i++){
+			var kFinance=$(".otherTr"+i).find("td:eq(1)").find("input:text").val();
+			var fuhao=$(".otherTr"+i).find("td:eq(1)").find("select").val();
+			if(fuhao =="+"){
+				count=Number(count) + Number(kFinance);
+			}else if(fuhao == "-"){
+				count=Number(count) - Number(kFinance);
+			}
+			finCount=finCount+fuhao+kFinance
+		}
+		 
+		$(".director"+otherFinNum).find("td:eq(4)").find("input:text").val(count); //其他款项
+		var yongdain=$(".director"+otherFinNum).find("td:eq(3)").text().replace("%","");	//佣点
+		
+		var salerNum=300000 * Number(yongdain) * 0.01 + Number(count);
+		
+		$(".director"+otherFinNum).find("td:eq(5)").text(salerNum); //佣金 
+		
+	}
+		
+		$("#otherFinance").css("display","none");
+		$("#fade").css("display","none");
+		
+	   if(rows > 1){
 			for(var i=rows;i>1;i--){
 				$(".otherTr"+i).remove();
 			}
 			$(".otherTr1").find("td:eq(1)").find("input:text").val("");
 			$(".otherTr1").find("td:eq(2)").find("input:text").val("");
-			$(".otherTr1").find("td:eq(3)").find("input:text").val("");
-			$(".otherTr1").find("td:eq(4)").find("input:text").val("");
 		}else{
 			$(".otherTr1").find("td:eq(1)").find("input:text").val("");
 			$(".otherTr1").find("td:eq(2)").find("input:text").val("");
-			$(".otherTr1").find("td:eq(3)").find("input:text").val("");
-			$(".otherTr1").find("td:eq(4)").find("input:text").val("");
-		}
+		} 
 	}
 	
 	
@@ -455,14 +525,19 @@ table{
 		
 		otherHtml+="<tr class=otherTr"+rows+">"//
 		 		+"<td style='width:40px;text-align:center;'>"+rows+"</td>"//
-		 		+"<td style='width:120px;text-align:center;'><input type='text' style='width:100px'/></td>"//
+		 		+"<td style='width:120px;text-align:center;'><select><option>+</option>"//
+		 		+"<option>-</option></select><input type='text' style='width:100px'/></td>"//
 	     		+"<td style='width:70px;text-align:center;'><input type='text' style='width:100px'/></td>"//
-		 		+"<td style='width:120px;text-align:center;'><input type='text' style='width:100px'/></td>"//
-		 		+"<td style='width:120px;text-align:center;'><input type='text' style='width:100px'/></td>"//
 		 		+"</tr>" 
 		 
 		$("#otherTable").append(otherHtml);	//添加表单 	 
 		otherHtml="";
+	}
+	
+	//关闭遮罩层
+	function closeDiv(){
+		$("#otherFinance").css("display","none");
+		$("#fade").css("display","none");
 	}
 	
 </script>

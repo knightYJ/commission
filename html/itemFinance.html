@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit"> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width"/>
+<title>项目请佣列表</title>
+ <link href="../css/bootstrap.min.css" rel="stylesheet"> 
+ 		<link rel="stylesheet" href="http://style.boshijie-web.cn/style/modules/ace/assets/css/datepicker.css" />
+		<link rel="stylesheet" href="http://style.boshijie-web.cn/style/modules/ace/assets/css/bootstrap-timepicker.css" />
+   <style>
+    .container{
+     min-width:1200px;
+     max-width:80%;
+   }         
+  </style>
+</head>
+<body>
+	<div>
+	<h3 style="text-align:center;">业务员请佣主页面</h3>
+	</div>
+     <div class="container">
+     <br/>
+     <br/>
+       <div>
+           <form action="" method="post">
+            <table style="margin-bottom:20px;width:80%; " >
+             <tr>
+                  <td>城市:</td>
+                  <td><input type="text" name="city"  value=""/></td>
+                  <td>区域:</td>
+                  <td><input type="text" name="area"  value=""/></td>
+                   <td>申请日期:</td>
+                  <td><input type="text" name="date"  value=""/></td>
+                  <td>审核状态:</td>
+                  <td>
+                    <select>
+                         <option>未审核</option>
+                         <option>审核中</option>
+                         <option>审核通过</option>
+                         <option>打回</option>
+                    </select>
+                  </td>
+             </tr>
+            </table>
+            <input type="submit" value="搜索" class="btn btn-primary btn-sm" style="margin-bottom:10px">
+           </form> 
+       </div>
+
+        <table class="table table-bordered table-hover" style="margin-top:20px">
+             <tr>
+              <th>序号</th>
+              <th>项目名称</th>
+              <th>城市</th>
+              <th>区域</th>
+              <th>成员数</th>
+              <th>总金额</th>
+              <th>到账金额</th>
+              <th>本次结余</th>
+              <th>地址</th>
+              <th>申请日期</th>
+              <th>状态</th>
+              <th>详细</th>
+           </tr>
+          <tbody>
+             <tr>
+              <td>1</td>
+              <td>鲁能公馆</td>
+              <td>苏州</td>
+              <td>吴中区</td>
+              <td>6人</td>
+              <td>50万</td>
+              <td>30万</td>
+              <td>0</td>
+              <td>苏州吴中xx街xx路xx号</td>
+              <td>2017-02-01</td>
+              <td>未审核</td>
+              <td><a href="saler.html">查看</a></td>
+             </tr>
+             <tr>
+              <td>2</td>
+              <td>鲁能公馆</td>
+              <td>苏州</td>
+              <td>吴中区</td>
+              <td>6人</td>
+              <td>50万</td>
+              <td>20万</td>
+              <td>0</td>
+              <td>苏州吴中xx街xx路xx号</td>
+              <td>2017-01-01</td>
+              <td>审核通过</td>
+              <td><a href="saler1.html">查看</a></td>
+             </tr>
+             </tbody>
+        </table>
+           
+     </div>
+
+</body>
+
+<script src="../js/jquery-1.10.1.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="http://style.boshijie-web.cn/style/modules/ace/assets/js/date-time/bootstrap-datepicker.min.js"></script>
+<script src="http://style.boshijie-web.cn/style/modules/ace/assets/js/date-time/bootstrap-timepicker.min.js"></script>
+
+</html>
