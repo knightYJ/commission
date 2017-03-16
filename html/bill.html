@@ -465,9 +465,12 @@
     	
     });
     
-
-   
-   
+   //总计  
+   var sum=0;
+   $(".subSum").each(function(k,v){
+	  sum+=$(this).text()*1; 
+   });
+    $(".sum").text(sum)   
    
 
 </script>
